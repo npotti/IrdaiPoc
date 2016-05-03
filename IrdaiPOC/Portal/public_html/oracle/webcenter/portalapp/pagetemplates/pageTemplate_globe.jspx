@@ -9,96 +9,111 @@
   <f:loadBundle basename="oracle.webcenter.portalframework.sitestructure.resource.PortalAppPageResource"
                 var="portalResource"/>
   <af:pageTemplateDef var="attrs">
-    <af:panelGroupLayout id="pt_root" layout="scroll">
+    <af:panelGroupLayout id="pt_root" layout="scroll"
+                         inlineStyle="background-color:Gray;">
       <!-- centered vertical stack: banner, navbar, content, footer -->
       <af:panelGroupLayout id="pt_pgl2" layout="vertical"
-                           inlineStyle="width:#{attrs.contentWidth};margin: 0 auto;">
+                           inlineStyle="width:960px;margin: 0 auto;background-color:White;">
         <!-- (1) banner, overall layout -->
+        <af:panelGroupLayout id="pt_pgl8" layout="horizontal">
+          <af:panelGroupLayout id="pt_pgl5"
+                               inlineStyle='background-image:url("../../../../images/logobg1.jpg"); height:170px; width:182px; background-repeat:No-Repeat;'
+                               layout="vertical" halign="center">
+            <af:image source="/images/irda new logo.png" id="pt_i1"
+                      inlineStyle="margin-top: 20px;"/>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout id="pt_pgl6">
+            <af:image source="/images/banner2.jpg" id="pt_i2"/>
+          </af:panelGroupLayout>
+          <cust:panelCustomizable layout="vertical" id="pt_pgl16" halign="end"
+                                  inlineStyle="padding:6px 8px">
+            <!-- Global links -->
+            <af:panelGroupLayout id="pt_pgl11" inlineStyle="white-space:nowrap">
+              <f:facet name="separator">
+                <af:panelGroupLayout id="pt_pgl17">
+                  <af:spacer id="pt_spb" width="5px"/>
+                  <af:outputText value="|" id="pt_bar1"
+                                 inlineStyle="color:White;"/>
+                  <af:spacer id="pt_spa" width="5px"/>
+                </af:panelGroupLayout>
+              </f:facet>
+              <!-- 1) Username -->
+              <af:outputText id="pt_ot1"
+                             value="#{requestContext.formatter[portalResource.welcome][securityContext.userName]}"
+                             inlineStyle="color: #014B99; font-size:small;"
+                             rendered="#{attrs.showGreetings}"/>
+              <!-- 2a) Admin link -->
+              <af:goLink id="pt_glnk1" text="#{portalResource['admin']}"
+                         destination="/admin"
+                         rendered="#{attrs.showAdmin and !attrs.isAdminPage}"
+                         inlineStyle="font-size:small; color: #014B99;"/>
+              <!-- 2b) Back to Portal link -->
+              <af:goLink id="pt_glnk2" text="#{portalResource['back']}"
+                         destination="/faces/wcnav_currentSelection"
+                         rendered="#{attrs.showAdmin and attrs.isAdminPage}"
+                         inlineStyle="font-size:small; color: #014B99;"/>
+              <!-- 3) Logout link -->
+              <af:commandLink id="pt_glnk4" text="#{portalResource['logout']}"
+                              action="#{o_w_s_l_LoginBackingBean.doLogout}"
+                              rendered="#{securityContext.authenticated}"
+                              inlineStyle="font-size:small; color: #014B99;"/>
+            </af:panelGroupLayout>
+            <!-- Login form -->
+            <af:subform id="pt_sf1" defaultCommand="pt_logincb"
+                        rendered="#{attrs.showLogin and !securityContext.authenticated}">
+              <af:panelFormLayout id="pt_pfl1">
+                <af:panelLabelAndMessage id="pt_plam1"
+                                         label="#{portalResource['username']}"
+                                         for="pt_it1" styleClass="NoLabelWrap"
+                                         labelStyle="font-size:small;color: #014B99;">
+                  <af:inputText id="pt_it1" simple="true"
+                                value="#{o_w_s_l_LoginBackingBean.userName}"
+                                columns="15"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage id="pt_plam2"
+                                         label="#{portalResource['password']}"
+                                         for="pt_it2" styleClass="NoLabelWrap"
+                                         labelStyle="font-size:small;color: #014B99;">
+                  <af:inputText id="pt_it2" simple="true"
+                                value="#{o_w_s_l_LoginBackingBean.password}"
+                                columns="15" secret="true"/>
+                </af:panelLabelAndMessage>
+              </af:panelFormLayout>
+              <af:spacer width="3" height="3" id="pt_s2"/>
+              <af:panelGroupLayout id="pt_pgl14" layout="horizontal"
+                                   halign="end">
+                <af:commandLink id="pt_logincb"
+                                text="#{portalResource['login']}"
+                                action="#{o_w_s_l_LoginBackingBean.doLogin}"
+                                inlineStyle="font-size:small;color: #014B99;"/>
+                <af:spacer id="pt_s3" width="5px"/>
+              </af:panelGroupLayout>
+            </af:subform>
+          </cust:panelCustomizable>
+        </af:panelGroupLayout>
         <af:panelBorderLayout id="pt_pgl1"
-                              rendered="#{!composerContext.inEditMode or attrs.isEditingTemplate}"
-                              inlineStyle='background-image:url(#{facesContext.externalContext.requestContextPath}/images/globe.png);'>
+                              inlineStyle="background-image:url(#{facesContext.externalContext.requestContextPath}/images/globe.png);"
+                              rendered="false">
           <!-- (2)-1 logo (Custom Text, Tag Line) -->
           <cust:panelCustomizable id="pt_pc2" layout="horizontal"
                                   inlineStyle="border-style:none;">
             <af:panelGroupLayout id="pt_pgl4" layout="vertical">
-                <af:spacer id="pt_sp1" height="12px"/>
-                <af:goLink text="#{portalResource['logo']}" id="pt_ot4" destination="/"
-                           inlineStyle="font-size:x-large; color:White;"/>
-                <af:spacer id="pt_sp2" height="10px"/>
-                <af:outputText value="#{portalResource['logo_tag']}" id="pt_ot6"
-                               inlineStyle="color:#558ff9; font-style:italic; font-size:small;"/>
-                <af:spacer id="pt_sp4" height="12px"/>
+              <af:spacer id="pt_sp1" height="12px"/>
+              <af:goLink text="#{portalResource['logo']}" id="pt_ot4"
+                         destination="/"
+                         inlineStyle="font-size:x-large; color:White;"/>
+              <af:spacer id="pt_sp2" height="10px"/>
+              <af:outputText value="#{portalResource['logo_tag']}" id="pt_ot6"
+                             inlineStyle="color:#558ff9; font-style:italic; font-size:small;"/>
+              <af:spacer id="pt_sp4" height="12px"/>
             </af:panelGroupLayout>
           </cust:panelCustomizable>
           <!-- (2)-2 global links (Welcome Message, Administration Link, Login/Logout -->
-          <f:facet name="end">
-            <cust:panelCustomizable layout="vertical" id="pt_pgl16" halign="end"
-                                    inlineStyle="padding:6px 8px">
-              <!-- Global links -->
-              <af:panelGroupLayout id="pt_pgl11"
-                                   inlineStyle="white-space:nowrap">
-                <f:facet name="separator">
-                  <af:panelGroupLayout id="pt_pgl17">
-                    <af:spacer id="pt_spb" width="5px"/>
-                    <af:outputText value="|" id="pt_bar1"
-                                   inlineStyle="color:White;"/>
-                    <af:spacer id="pt_spa" width="5px"/>
-                  </af:panelGroupLayout>
-                </f:facet>
-                <!-- 1) Username -->
-                <af:outputText id="pt_ot1"
-                               value="#{requestContext.formatter[portalResource.welcome][securityContext.userName]}"
-                               inlineStyle="color:White; font-size:small;"
-                               rendered="#{attrs.showGreetings}"/>
-                <!-- 2a) Admin link -->
-                <af:goLink id="pt_glnk1" text="#{portalResource['admin']}"
-                           destination="/admin"
-                           rendered="#{attrs.showAdmin and !attrs.isAdminPage}"
-                           inlineStyle="font-size:small; color:White;"/>
-                <!-- 2b) Back to Portal link -->
-                <af:goLink id="pt_glnk2" text="#{portalResource['back']}" destination="/faces/wcnav_currentSelection"
-                           rendered="#{attrs.showAdmin and attrs.isAdminPage}"
-                           inlineStyle="font-size:small; color:White;"/>
-                <!-- 3) Logout link -->
-                <af:commandLink id="pt_glnk4" text="#{portalResource['logout']}"
-                                action="#{o_w_s_l_LoginBackingBean.doLogout}"
-                                rendered="#{securityContext.authenticated}"
-                                inlineStyle="font-size:small; color:White;"/>
-              </af:panelGroupLayout>
-              <!-- Login form -->
-              <af:subform id="pt_sf1" defaultCommand="pt_logincb"
-                          rendered="#{attrs.showLogin and !securityContext.authenticated}">
-                <af:panelFormLayout id="pt_pfl1">
-                  <af:panelLabelAndMessage id="pt_plam1" label="#{portalResource['username']}" for="pt_it1"
-                                           styleClass="NoLabelWrap"
-                                           labelStyle="font-size:small;color:white;">
-                    <af:inputText id="pt_it1" simple="true"
-                                  value="#{o_w_s_l_LoginBackingBean.userName}"
-                                  columns="15"/>
-                  </af:panelLabelAndMessage>
-                  <af:panelLabelAndMessage id="pt_plam2" label="#{portalResource['password']}" for="pt_it2"
-                                           styleClass="NoLabelWrap"
-                                           labelStyle="font-size:small;color:white;">
-                    <af:inputText id="pt_it2" simple="true"
-                                  value="#{o_w_s_l_LoginBackingBean.password}"
-                                  columns="15" secret="true"/>
-                  </af:panelLabelAndMessage>
-                </af:panelFormLayout>
-                <af:spacer width="3" height="3" id="pt_s2"/>
-                <af:panelGroupLayout id="pt_pgl14" layout="horizontal"
-                                     halign="end">
-                  <af:commandLink id="pt_logincb" text="#{portalResource['login']}"
-                                  action="#{o_w_s_l_LoginBackingBean.doLogin}"
-                                  inlineStyle="font-size:small;color:white;"/>
-                  <af:spacer id="pt_s3" width="5px"/>
-                </af:panelGroupLayout>
-              </af:subform>
-            </cust:panelCustomizable>
-          </f:facet>
+          <f:facet name="end"/>
         </af:panelBorderLayout>
         <!-- (3) navbar (Home node, Page Hierarchy Nodes, Sub-level Nodes etc -->
         <cust:panelCustomizable id="pt_pc4"
-                                inlineStyle="background-image:url(#{facesContext.externalContext.requestContextPath}/images/globe_tab-bkg.png);background-position:center top;background-repeat:repeat-x;padding-top:2px;"
+                                inlineStyle="background-image:url(#{facesContext.externalContext.requestContextPath}/images/cornerbg.jpg);background-position:center top;background-repeat:repeat-x;padding-top:2px;"
                                 rendered="#{!composerContext.inEditMode and attrs.showNavigation and !attrs.isEditingTemplate}">
           <af:panelGroupLayout id="pt_pgl3" layout="horizontal"
                                inlineStyle="height:20px;">
@@ -115,7 +130,8 @@
                                     action="pprnav"
                                     disabled="#{not node.navigable}"
                                     actionListener="#{navigationContext.processAction}"
-                                    clientComponent="#{node.attributes['Target'] == '_popup' ? true : false}">
+                                    clientComponent="#{node.attributes['Target'] == '_popup' ? true : false}"
+                                    styleClass="topMenuButton">
                       <!-- pass node to processAction for setting current selection and navigation  -->
                       <f:attribute name="node" value="#{node}"/>
                       <af:showPopupBehavior popupId="menuPopup"
@@ -159,7 +175,8 @@
                                           action="pprnav"
                                           disabled="#{not node2.navigable}"
                                           actionListener="#{navigationContext.processAction}"
-                                          clientComponent="#{node2.attributes['Target'] == '_popup' ? true : false}">
+                                          clientComponent="#{node2.attributes['Target'] == '_popup' ? true : false}"
+                                          styleClass="menuButton AFStretchWidth">
                             <!-- pass node to processAction for setting current selection and navigation  -->
                             <f:attribute name="node" value="#{node2}"/>
                             <c:if test="${node2.attributes['Target'] == '_popup'}">
@@ -211,8 +228,7 @@
         <af:panelGroupLayout id="pt_pgl15" layout="vertical"
                              rendered="#{!composerContext.inEditMode or facesContext.viewRoot.viewId == '/oracle/webcenter/siteresources/scopedMD/s8bba98ff_4cbb_40b8_beee_296c916a23ed/siteTemplate/gsr395559d2_16dc_4c21_89f8_f62c184d3bbc/Container.jspx'}">
           <af:spacer id="pt_sp8" height="3px"/>
-          <af:outputText id="pt_ot5"
-                         value="#{portalResource['copyright']}"/>
+          <af:outputText id="pt_ot5" value="#{portalResource['copyright']}"/>
         </af:panelGroupLayout>
       </af:panelGroupLayout>
     </af:panelGroupLayout>

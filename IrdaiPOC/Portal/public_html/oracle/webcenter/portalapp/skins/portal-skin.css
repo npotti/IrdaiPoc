@@ -623,3 +623,100 @@ af|panelTabbed::footer-end[theme="medium"]:rtl,
 af|decorativeBox::bottom-end[theme="light"]:rtl
 {
 }
+
+/*Custom Skinning*/
+
+af|commandLink.topMenuButton {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight:bold;
+  text-align: left;
+  background-image: none;
+  background-color: transparent;
+  line-height: 18px;
+  border-width: 0px;
+  padding: 2px 10px;
+  position:relative;
+  border-radius: 3px;
+  outline: none;
+  white-space:nowrap;
+  display:block;
+}
+
+af|commandLink.topMenuButton:hover {  
+
+  color: #014B99 !important;
+  /*background-color: #CB333B !important;*/
+}
+
+
+af|commandLink:focus.topMenuButton {  
+
+  color:  #014B99 !important;
+  /*background-color: #CB333B !important;*/
+
+}
+
+af|commandLink:active.topMenuButton {
+
+  color:  #014B99 !important;
+  /*background-color: #CB333B !important;*/
+}
+
+af|commandLink.menuButton {
+  color: #263B52;
+  text-decoration: none;
+  font-size: small;
+  font-weight:bold;
+  text-align: left;
+  background-image: none;
+  background-color: #c0c0c0;
+  line-height: 20px;
+  border-width: 0px;
+  padding: 5px;
+    display: block;
+  border-radius: 3px;
+  outline: none;
+  white-space:nowrap;
+}
+
+af|commandLink.menuButton:hover {  
+  background-color: gray;
+    display: block;
+      line-height: 20px;
+color: white !important;
+}
+
+af|commandButton:focus.menuButton  {
+  color: white !important;
+  text-decoration: none;
+  font-size: small;
+  text-align: left;
+  background-image: none;
+  background-color: #c0c0c0;
+   line-height: 20px;
+
+  border-width: 0px;
+    display: block;
+}
+
+
+
+af|commandButton:focus:hover.menuButton {
+  color: white !important;
+  text-decoration: none;
+  font-size: small;
+  text-align: left;
+  background-image: none;
+  background-color: gray;
+  border-width: 0px;
+  line-height: 20px;
+  border-width: 0px;
+    display: block;
+}
+
+.AFPopupSelectorHeader, .AFPopupSelectorHeaderStart, .AFPopupSelectorHeaderEnd, .AFPopupSelectorContent, .AFPopupSelectorContentStart, .AFPopupSelectorContentEnd, .AFPopupSelectorFooter, .AFPopupSelectorFooterStart, .AFPopupSelectorFooterEnd {
+  border-width: 0px;
+  background-color: #c0c0c0;
+}
