@@ -7,6 +7,24 @@
     <variableIterator id="variables"/>
     <page path="oracle.webcenter.portalapp.pagetemplates.pageTemplate_globePageDef"
           id="pageTemplateBinding" Refresh="ifNeeded"/>
+    <taskFlow id="doclibexplorer1"
+              taskFlowId="/oracle/webcenter/doclib/view/jsf/taskflows/explore/explorer.xml#doclib-explorer"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="treeNavCollapsed" value="true"/>
+        <parameter id="connectionName" value="${'UCM'}"/>
+        <parameter id="startFolderPath"
+                   value="${'/Contribution Folders/health/Circulars/'}"/>
+        <parameter id="resourceId" value="${''}"/>
+        <parameter id="readOnly"
+                   value="#{!securityContext.userInRole['HealthAdmin'] or securityContext.userName != 'weblogic'}"/>
+        <parameter id="showDocuments" value="true"/>
+        <parameter id="featuresOff" value="${''}"/>
+        <parameter id="showFolders" value="true"/>
+        <parameter id="pageSize" value="27"/>
+      </parameters>
+    </taskFlow>
   </executables>
   <bindings/>
 </pageDefinition>

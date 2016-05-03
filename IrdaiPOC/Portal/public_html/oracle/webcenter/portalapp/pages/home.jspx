@@ -25,9 +25,18 @@
                 <af:panelGroupLayout id="marqueecontainer" layout="vertical">
                   <af:panelGroupLayout id="vmarquee" layout="vertical">
                     <af:spacer width="10" height="10" id="s1"/>
-                    <f:verbatim><marquee><af:outputText value="outputText2"
-                                                        inlineStyle="font-weight:bold;"/></marquee> </f:verbatim> 
-                  </af:panelGroupLayout>
+                    <f:verbatim><marquee direction="up">
+                    <af:panelGroupLayout id="marqla" halign="center"
+                                         valign="middle" layout="vertical">
+                    <af:outputText value="outputText2"
+                                inlineStyle="font-weight:bold;"/>
+                    <af:outputText value="outputTex2"
+                                 inlineStyle="font-weight:bold;"/>
+                    <af:outputText value="outputTxt2"
+                                inlineStyle="font-weight:bold;"/>         
+                                                        </af:panelGroupLayout>
+                                                        </marquee> </f:verbatim> 
+                  </af:panelGroupLayout>0
                 </af:panelGroupLayout>
               </cust:panelCustomizable>
               <f:facet name="editor">
