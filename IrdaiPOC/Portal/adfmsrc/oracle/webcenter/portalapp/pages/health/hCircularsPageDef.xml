@@ -18,7 +18,7 @@
                    value="${'/Contribution Folders/health/Circulars/'}"/>
         <parameter id="resourceId" value="${''}"/>
         <parameter id="readOnly"
-                   value="#{!securityContext.userInRole['HealthAdmin'] or securityContext.userName != 'weblogic'}"/>
+                   value="#{!securityContext.userInRole['HealthAdmin']}"/>
         <parameter id="showDocuments" value="true"/>
         <parameter id="featuresOff" value="${''}"/>
         <parameter id="showFolders" value="true"/>

@@ -20,7 +20,11 @@
     <taskFlow id="announcementmainview1"
               taskFlowId="/oracle/webcenter/collab/announcement/view/taskflows/main-view-definition.xml#announcement-main-view"
               activation="deferred"
-              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="parentId" value="#{'1'}"/>
+      </parameters>
+    </taskFlow>
   </executables>
   <bindings/>
   <permission permissionClass="oracle.webcenter.security.auth.HierarchicalResourcePermission"

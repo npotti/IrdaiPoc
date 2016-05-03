@@ -18,7 +18,7 @@
                    value="${'/Contribution Folders/Vigilance/Circulars/'}"/>
         <parameter id="resourceId" value="${''}"/>
         <parameter id="readOnly"
-                   value="#{!securityContext.userInRole['VigilanceAdmin'] or securityContext.userName != 'weblogic'}"/>
+                   value="#{!securityContext.userInRole['VigilanceAdmin']}"/>
         <parameter id="showDocuments" value="true"/>
         <parameter id="featuresOff" value="${''}"/>
         <parameter id="showFolders" value="false"/>
