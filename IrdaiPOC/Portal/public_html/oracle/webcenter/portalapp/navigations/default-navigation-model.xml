@@ -14,6 +14,125 @@
         <parameter id="path">/oracle/webcenter/portalapp/pagehierarchy/pages.xml</parameter>
       </parameters>
     </customFolder>
+    <folder id="hDepartment" visible="#{true}">
+      <attributes>
+        <attribute value="Health Department" isKey="false" attributeId="Title"/>
+      </attributes>
+      <contents>
+        <url id="hEDrafts" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/health/hDrafts.jspx">
+          <attributes>
+            <attribute value="Exposure drafts" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+        <url id="hCirculars" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/health/hCirculars.jspx">
+          <attributes>
+            <attribute value="Circulars" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+        <url id="hManuals" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/health/hManuals.jspx">
+          <attributes>
+            <attribute value="Manuals" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+        <url id="hCommitteesl" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/health/hCommittees.jspx">
+          <attributes>
+            <attribute value="Committes" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+      </contents>
+    </folder>
+    <folder id="vigilance" visible="#{true}">
+      <attributes>
+        <attribute value="Vigilance Department" isKey="false" attributeId="Title"/>
+      </attributes>
+      <contents>
+        <url id="vCirculars" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/vigilance/vCirculars.jspx">
+          <attributes>
+            <attribute value="Circulars" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+        <url id="vCVO" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/vigilance/vCVO.jspx">
+          <attributes>
+            <attribute value="CVO Role and functions" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+        <url id="vCVC" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/vigilance/vCVC.jspx">
+          <attributes>
+            <attribute value="CVC Act/Manuals" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+        <url id="vTenders" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/vigilance/vTenders.jspx">
+          <attributes>
+            <attribute value="Guidelines on Tenders" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+        <url id="vSelection" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/vigilance/vSelection.jspx">
+          <attributes>
+            <attribute value="Guidelines on Selection" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+        <url id="vExamination" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/vigilance/vExamination.jspx">
+          <attributes>
+            <attribute value="Guidelines on Intensive Examination" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+        <url id="vlinks" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/vigilance/vlinks.jspx">
+          <attributes>
+            <attribute value="Useful links" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+        <url id="vMessages" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/vigilance/vMessages.jspx">
+          <attributes>
+            <attribute value="Messages on the eve of Vigilance week" isKey="false" attributeId="Title"/>
+          </attributes>
+        </url>
+      </contents>
+    </folder>
+    <url id="messboard" visible="#{true}"
+         factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+         url="page://oracle/webcenter/portalapp/pages/messageBoard.jspx">
+      <attributes>
+        <attribute value="Message Board" isKey="false" attributeId="Title"/>
+      </attributes>
+    </url>
+    <url id="analytics" visible="#{true}"
+         factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+         url="page://oracle/webcenter/portalapp/pages/analytics.jspx">
+      <attributes>
+        <attribute value="Analytics" isKey="false" attributeId="Title"/>
+      </attributes>
+    </url>
+    <url id="blog" visible="#{true}"
+         factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+         url="page://oracle/webcenter/portalapp/pages/blogs.jspx">
+      <attributes>
+        <attribute value="Blogs" isKey="false" attributeId="Title"/>
+      </attributes>
+    </url>
   </contents>
   <schema resourceBundle="oracle.adf.rc.attribute.nls.AttributeBundle">
     <descriptor multivalue="false" shortLabelKey="TITLE.SHORT_PROMPT_KEY"
