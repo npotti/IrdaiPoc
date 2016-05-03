@@ -57,6 +57,8 @@
           usageId="com_irdai_wc_portal_discussionsPageDef"/>
     <page path="/oracle/webcenter/portalapp/pages/userSearch.jspx"
           usageId="com_irdai_wc_portal_userSearchPageDef"/>
+    <page path="/oracle/webcenter/portalapp/pages/UCMSearch.jspx"
+          usageId="com_irdai_wc_portal_UCMSearchPageDef"/>
   </pageMap>
   <definitionFactories>
     <factory nameSpace="http://xmlns.oracle.com/portlet/bindings"
@@ -119,5 +121,7 @@
           path="oracle.webcenter.portalapp.pages.discussionsPageDef"/>
     <page id="com_irdai_wc_portal_userSearchPageDef"
           path="oracle.webcenter.portalapp.pages.userSearchPageDef"/>
+    <page id="com_irdai_wc_portal_UCMSearchPageDef"
+          path="oracle.webcenter.portalapp.pages.UCMSearchPageDef"/>
   </pageDefinitionUsages>
 </Application>
