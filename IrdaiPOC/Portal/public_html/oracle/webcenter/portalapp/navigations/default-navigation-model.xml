@@ -40,6 +40,7 @@
           <attributes>
             <attribute value="Manuals" isKey="false" attributeId="Title"/>
           </attributes>
+          <contents/>
         </url>
         <url id="hCommitteesl" visible="#{true}"
              factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
@@ -148,6 +149,24 @@
              <parameter id="startFolderPath">${'/Contribution Folders/UserCheckIns/'}</parameter>
             <parameter id="layout">${'explorer'}</parameter>
           </parameters>
+    </url>
+    <url id="userSrc"
+         factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+         visible="#{securityContext.authenticated}"
+         url="page://oracle/webcenter/portalapp/pages/userSearch.jspx">
+      <attributes>
+        <attribute attributeId="Title" isKey="false" value="User Search"/>
+        <attribute attributeId="Redirect" isKey="false" value="false"/>
+      </attributes>
+      <contents/>
+    </url>
+    <url id="content"
+         factoryClass="oracle.webcenter.portalframework.sitestructure.rc.UrlResourceFactory"
+         visible="#{false}"
+         url="http://webcenterpoc.oracle.com:16201/cs/">
+      <attributes>
+        <attribute attributeId="Title" isKey="false" value="Content"/>
+      </attributes>
     </url>
   </contents>
   <schema resourceBundle="oracle.adf.rc.attribute.nls.AttributeBundle">

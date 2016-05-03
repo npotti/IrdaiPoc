@@ -55,6 +55,8 @@
           usageId="com_irdai_wc_portal_blogsPageDef"/>
     <page path="/oracle/webcenter/portalapp/pages/discussions.jspx"
           usageId="com_irdai_wc_portal_discussionsPageDef"/>
+    <page path="/oracle/webcenter/portalapp/pages/userSearch.jspx"
+          usageId="com_irdai_wc_portal_userSearchPageDef"/>
   </pageMap>
   <definitionFactories>
     <factory nameSpace="http://xmlns.oracle.com/portlet/bindings"
@@ -115,5 +117,7 @@
           path="oracle.webcenter.portalapp.pages.blogsPageDef"/>
     <page id="com_irdai_wc_portal_discussionsPageDef"
           path="oracle.webcenter.portalapp.pages.discussionsPageDef"/>
+    <page id="com_irdai_wc_portal_userSearchPageDef"
+          path="oracle.webcenter.portalapp.pages.userSearchPageDef"/>
   </pageDefinitionUsages>
 </Application>
