@@ -22,6 +22,13 @@
                   <af:outputText value="To Protect the interests of the policyholders, to regulate, promote and ensure orderly growth of the insurance industry and for matters connected therewith or incidental thereto." id="ot2"
                                  inlineStyle="font-weight:bold;"/>
                 </af:panelGroupLayout>
+                <af:panelGroupLayout id="marqueecontainer" layout="vertical">
+                  <af:panelGroupLayout id="vmarquee" layout="vertical">
+                    <af:spacer width="10" height="10" id="s1"/>
+                    <f:verbatim><marquee><af:outputText value="outputText2"
+                                                        inlineStyle="font-weight:bold;"/></marquee> </f:verbatim> 
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
               </cust:panelCustomizable>
               <f:facet name="editor">
                 <pe:pageEditorPanel id="pep1"/>
