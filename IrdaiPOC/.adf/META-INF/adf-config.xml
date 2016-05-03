@@ -11,7 +11,8 @@
             xmlns:collabC="http://xmlns.oracle.com/webcenter/collab/config"
             xmlns:tagC="http://xmlns.oracle.com/webcenter/tagging/config"
             xmlns:pe="http://xmlns.oracle.com/adf/pageeditor/config"
-            xmlns:portal="http://xmlns.oracle.com/webcenter/portal/config">
+            xmlns:portal="http://xmlns.oracle.com/webcenter/portal/config"
+            xmlns:doclibC="http://xmlns.oracle.com/webcenter/doclib/config">
   <adf-adfm-config xmlns="http://xmlns.oracle.com/adfm/config">
     <defaults useBindVarsForViewCriteriaLiterals="true"
               useBindValuesInFindByKey="true" executeEmptyOnException="true"/>
@@ -29,6 +30,8 @@
                          jaasProviderClass="oracle.adf.share.security.providers.jps.JpsSecurityContext"
                          authorizationEnforce="true"
                          authenticationRequire="true"/>
+    <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
+                            credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
   </adf-security-child>
   <rcs:adf-rcs-config>
     <rcs:rcs-config>
@@ -159,6 +162,53 @@
     </service-config>
   </collabC:adf-collaboration-config>
   <adf-tagging-config xmlns="http://xmlns.oracle.com/webcenter/tagging/config"/>
+  <pe:page-editor-config>
+    <pe:security-config>
+      <pe:security-policies>
+        <pe:security-policy name="customPagePolicy" override="pagePolicy">
+          <pe:policy-class>oracle.webcenter.security.policy.WCPageSecurityPolicy</pe:policy-class>
+        </pe:security-policy>
+        <pe:security-policy name="customTFPolicy" override="taskFlowPolicy">
+          <pe:policy-class>oracle.webcenter.security.policy.WCTaskflowSecurityPolicy</pe:policy-class>
+        </pe:security-policy>
+      </pe:security-policies>
+    </pe:security-config>
+  </pe:page-editor-config>
+  <portal:adf-portal-config>
+    <portal:preferences>
+      <portal:preference id="oracle.webcenter.portalapp.navigation.model"
+                         desc="Default Navigation Model"
+                         value="/oracle/webcenter/portalapp/navigations/default-navigation-model.xml"
+                         resourceType="navigation" display="true"/>
+      <portal:preference id="oracle.webcenter.portalapp.resourcecatalog"
+                         desc="Default Resource Catalog"
+                         value="/oracle/webcenter/portalapp/catalogs/default-catalog.xml"
+                         resourceType="ResourceCatalog" display="true"/>
+      <portal:preference id="oracle.webcenter.portalapp.pagetemplate.pageTemplate"
+                         desc="Default Page Template"
+                         value="/oracle/webcenter/portalapp/pagetemplates/pageTemplate_globe.jspx"
+                         resourceType="Template" display="true"/>
+      <portal:preference id="oracle.webcenter.portalapp.navigation.renderer"
+                         desc="Default Navigation Renderer"
+                         value="/oracle/webcenter/portalapp/pages/navigation-renderer.jspx"
+                         display="false"/>
+      <portal:preference id="oracle.webcenter.portalapp.skin"
+                         desc="Default Portal Skin" value="portal"
+                         resourceType="Skin" display="true"/>
+      <portal:preference id="oracle.webcenter.portalapp.sitemap"
+                         desc="Default Sitemap EL"
+                         value="#{navigationContext.defaultNavigationModel.defaultSiteMap}"
+                         resourceType="Sitemap" display="true"/>
+      <portal:preference id="oracle.webcenter.portalapp.baseresourceurl"
+                         desc="Default Base Resource URL EL"
+                         value="#{request.scheme}://#{request.serverName}:#{request.serverPort}#{request.contextPath}"
+                         resourceType="BaseResourceURL" display="true"/>
+    </portal:preferences>
+    <portal:resource-mappings>
+      <portal:resource-mapping path="/"
+                               url-prefix="#{request.scheme}://#{request.serverName}:#{request.serverPort}#{request.contextPath}"/>
+    </portal:resource-mappings>
+  </portal:adf-portal-config>
   <mdsC:adf-mds-config version="11.1.1.000">
     <mds-config xmlns="http://xmlns.oracle.com/mds/config">
       <persistence-config>
@@ -224,51 +274,6 @@
       </cache-config>
     </mds-config>
   </mdsC:adf-mds-config>
-  <pe:page-editor-config>
-    <pe:security-config>
-      <pe:security-policies>
-        <pe:security-policy name="customPagePolicy" override="pagePolicy">
-          <pe:policy-class>oracle.webcenter.security.policy.WCPageSecurityPolicy</pe:policy-class>
-        </pe:security-policy>
-        <pe:security-policy name="customTFPolicy" override="taskFlowPolicy">
-          <pe:policy-class>oracle.webcenter.security.policy.WCTaskflowSecurityPolicy</pe:policy-class>
-        </pe:security-policy>
-      </pe:security-policies>
-    </pe:security-config>
-  </pe:page-editor-config>
-  <portal:adf-portal-config>
-    <portal:preferences>
-      <portal:preference id="oracle.webcenter.portalapp.navigation.model"
-                         desc="Default Navigation Model"
-                         value="/oracle/webcenter/portalapp/navigations/default-navigation-model.xml"
-                         resourceType="navigation" display="true"/>
-      <portal:preference id="oracle.webcenter.portalapp.resourcecatalog"
-                         desc="Default Resource Catalog"
-                         value="/oracle/webcenter/portalapp/catalogs/default-catalog.xml"
-                         resourceType="ResourceCatalog" display="true"/>
-      <portal:preference id="oracle.webcenter.portalapp.pagetemplate.pageTemplate"
-                         desc="Default Page Template"
-                         value="/oracle/webcenter/portalapp/pagetemplates/pageTemplate_globe.jspx"
-                         resourceType="Template" display="true"/>
-      <portal:preference id="oracle.webcenter.portalapp.navigation.renderer"
-                         desc="Default Navigation Renderer"
-                         value="/oracle/webcenter/portalapp/pages/navigation-renderer.jspx"
-                         display="false"/>
-      <portal:preference id="oracle.webcenter.portalapp.skin"
-                         desc="Default Portal Skin" value="portal"
-                         resourceType="Skin" display="true"/>
-      <portal:preference id="oracle.webcenter.portalapp.sitemap"
-                         desc="Default Sitemap EL"
-                         value="#{navigationContext.defaultNavigationModel.defaultSiteMap}"
-                         resourceType="Sitemap" display="true"/>
-      <portal:preference id="oracle.webcenter.portalapp.baseresourceurl"
-                         desc="Default Base Resource URL EL"
-                         value="#{request.scheme}://#{request.serverName}:#{request.serverPort}#{request.contextPath}"
-                         resourceType="BaseResourceURL" display="true"/>
-    </portal:preferences>
-    <portal:resource-mappings>
-      <portal:resource-mapping path="/"
-                               url-prefix="#{request.scheme}://#{request.serverName}:#{request.serverPort}#{request.contextPath}"/>
-    </portal:resource-mappings>
-  </portal:adf-portal-config>
+  <doclibC:adf-doclib-config xmlns="http://xmlns.oracle.com/webcenter/doclib/config"
+                             primaryConnectionName="UCM"/>
 </adf-config>
