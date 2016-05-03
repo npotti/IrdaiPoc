@@ -38,4 +38,31 @@
          </StringRefAddr>
       </RefAddresses>
    </Reference>
+   <Reference name="Analytics" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="Analytics" xmlns="">
+      <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
+      <RefAddresses>
+         <StringRefAddr addrType="sid">
+            <Contents>WCPOC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>WCP_ACTIVITIES</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>webcenterpoc.oracle.com</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1524</Contents>
+         </StringRefAddr>
+         <SecureRefAddr addrType="password"/>
+         <StringRefAddr addrType="DeployPassword">
+            <Contents>true</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
 </References>

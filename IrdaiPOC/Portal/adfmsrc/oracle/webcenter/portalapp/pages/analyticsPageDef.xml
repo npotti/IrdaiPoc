@@ -7,6 +7,14 @@
     <variableIterator id="variables"/>
     <page path="oracle.webcenter.portalapp.pagetemplates.pageTemplate_globePageDef"
           id="pageTemplateBinding" Refresh="ifNeeded"/>
+    <taskFlow id="analyticsconsole1"
+              taskFlowId="/oracle/webcenter/analytics/view/jsf/taskflows/seeded/analytics-console.xml#analytics-console"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="maxDataPointsPerSeries" value="25"/>
+      </parameters>
+    </taskFlow>
   </executables>
   <bindings/>
 </pageDefinition>

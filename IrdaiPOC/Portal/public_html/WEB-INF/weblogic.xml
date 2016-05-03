@@ -12,7 +12,7 @@
   </resource-description>
   <resource-description>
     <res-ref-name>jdbc/ActivitiesDS</res-ref-name>
-    <jndi-name>jdbc/activities/CustomPortalDS</jndi-name>
+    <jndi-name>jdbc/AnalyticsDS</jndi-name>
   </resource-description>
   <library-ref>
     <library-name>oracle.webcenter.framework.view</library-name>

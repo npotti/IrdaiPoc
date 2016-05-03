@@ -6,10 +6,12 @@
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <f:view>
     <af:document id="d1">
-      <af:form id="f1">
+      <af:form id="f1" usesUpload="true">
         <af:pageTemplate viewId="/oracle/webcenter/portalapp/pagetemplates/pageTemplate_globe.jspx"
                          value="#{bindings.pageTemplateBinding}" id="pt1">
-          <f:facet name="content"/>
+          <f:facet name="content">
+            <af:region value="#{bindings.blogmainview1.regionModel}" id="r1"/>
+          </f:facet>
         </af:pageTemplate>
       </af:form>
     </af:document>

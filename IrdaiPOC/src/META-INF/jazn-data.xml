@@ -3,11 +3,29 @@
     <jazn-realm default="jazn.com">
         <realm>
             <name>jazn.com</name>
+            <roles>
+                <role>
+                    <name>HealthAdmin</name>
+                    <display-name>Health Admin</display-name>
+                </role>
+                <role>
+                    <name>HealthModerator</name>
+                    <display-name>Health Moderator</display-name>
+                </role>
+                <role>
+                    <name>VigilanceAdmin</name>
+                    <display-name>Vigilance Admin</display-name>
+                </role>
+                <role>
+                    <name>VigilanceModerator</name>
+                    <display-name>Vigilance Moderator</display-name>
+                </role>
+            </roles>
         </realm>
     </jazn-realm>
     <policy-store>
         <applications>
-            <application locale="en_IN">
+            <application locale="en_US">
                 <name>IrdaiPOC</name>
                 <app-roles>
                     <app-role>
@@ -52,12 +70,12 @@
                     </app-role>
                     <app-role>
                         <name>test-all</name>
-                        <class>oracle.security.jps.service.policystore.ApplicationRole</class>
                         <display-name>test-all</display-name>
+                        <class>oracle.security.jps.service.policystore.ApplicationRole</class>
                         <members>
                             <member>
-                                <name>anonymous-role</name>
                                 <class>oracle.security.jps.internal.core.principals.JpsAnonymousRoleImpl</class>
+                                <name>anonymous-role</name>
                             </member>
                         </members>
                     </app-role>
@@ -3610,6 +3628,16 @@
                                 <name>/oracle/webcenter/portal/framework/navigation/renderer/url-renderer.xml#url-renderer</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/oracle/webcenter/people/view/jsf/regions/people-contacts.xml#people-contacts</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/oracle/webcenter/people/view/jsf/regions/.*</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -3855,85 +3883,15 @@
                         <grantee>
                             <principals>
                                 <principal>
-                                    <name>test-all</name>
                                     <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                    <name>test-all</name>
                                 </principal>
                             </principals>
                         </grantee>
                         <permissions>
                             <permission>
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.health.hDraftsPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.health.hCircularsPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.health.hManualsPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.health.hCommitteesPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.health.hReportsPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.health.hMOMPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
                                 <name>oracle.webcenter.portalapp.pages.health.MinutesPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.vigilance.vCircularsPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.vigilance.vCVOPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.vigilance.vCVCPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.vigilance.vTendersPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.vigilance.vSelectionPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.vigilance.vExaminationPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.vigilance.vlinksPageDef</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>oracle.webcenter.portalapp.pages.vigilance.vMessagesPageDef</name>
                                 <actions>view</actions>
                             </permission>
                             <permission>
@@ -3954,6 +3912,194 @@
                             <permission>
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
                                 <name>oracle.webcenter.portalapp.pages.discussionsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                        </permissions>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <name>HealthAdmin</name>
+                                    <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permissions>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hCircularsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hCommitteesPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hDraftsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hManualsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hMOMPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hReportsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                        </permissions>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <name>HealthModerator</name>
+                                    <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permissions>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hCircularsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hCommitteesPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hDraftsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hManualsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hMOMPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.health.hReportsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                        </permissions>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <name>VigilanceAdmin</name>
+                                    <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permissions>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vCircularsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vCVCPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vCVOPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vExaminationPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vlinksPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vMessagesPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vSelectionPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vTendersPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                        </permissions>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <name>VigilanceModerator</name>
+                                    <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permissions>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vCircularsPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vCVCPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vCVOPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vExaminationPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vlinksPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vMessagesPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vSelectionPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.vigilance.vTendersPageDef</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>

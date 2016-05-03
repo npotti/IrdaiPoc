@@ -14,7 +14,15 @@
 	<af:pageTemplate value="#{bindings.pageTemplateBinding.templateModel}" id="pt1">
           <f:facet name="content">
             <pe:pageCustomizable id="hm_pgc1">
-              <cust:panelCustomizable id="hm_pnc1" layout="scroll"/>
+              <cust:panelCustomizable id="hm_pnc1" layout="scroll">
+                <af:panelGroupLayout id="pgl2" layout="vertical"
+                                     halign="center">
+                  <af:outputText value="Our Mission" id="ot1"
+                                 inlineStyle="color:#089BC8; font-size:medium; font-weight:bold;"/>
+                  <af:outputText value="To Protect the interests of the policyholders, to regulate, promote and ensure orderly growth of the insurance industry and for matters connected therewith or incidental thereto." id="ot2"
+                                 inlineStyle="font-weight:bold;"/>
+                </af:panelGroupLayout>
+              </cust:panelCustomizable>
               <f:facet name="editor">
                 <pe:pageEditorPanel id="pep1"/>
               </f:facet>

@@ -7,6 +7,16 @@
     <variableIterator id="variables"/>
     <page path="oracle.webcenter.portalapp.pagetemplates.pageTemplate_globePageDef"
           id="pageTemplateBinding" Refresh="ifNeeded"/>
+    <taskFlow id="blogmainview1"
+              taskFlowId="/oracle/webcenter/blog/view/jsf/taskflows/blogDigestViewer/blog-main-view.xml#blog-main-view"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="resourceId" value="${'UCM/Contribution Folders/Blogs'}"/>
+        <parameter id="hideComments" value="false"/>
+        <parameter id="pageSize" value="10"/>
+      </parameters>
+    </taskFlow>
   </executables>
   <bindings/>
 </pageDefinition>

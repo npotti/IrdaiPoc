@@ -14,7 +14,8 @@
         <parameter id="path">/oracle/webcenter/portalapp/pagehierarchy/pages.xml</parameter>
       </parameters>
     </customFolder>
-    <folder id="hDepartment" visible="#{true}">
+    <folder id="hDepartment"
+            visible="#{securityContext.userInRole['HealthAdmin,HealthModerator']}">
       <attributes>
         <attribute value="Health Department" isKey="false" attributeId="Title"/>
       </attributes>
@@ -49,7 +50,8 @@
         </url>
       </contents>
     </folder>
-    <folder id="vigilance" visible="#{true}">
+    <folder id="vigilance"
+            visible="#{securityContext.userInRole['VigilanceAdmin,VigilanceModerator']}">
       <attributes>
         <attribute value="Vigilance Department" isKey="false" attributeId="Title"/>
       </attributes>
@@ -112,21 +114,21 @@
         </url>
       </contents>
     </folder>
-    <url id="messboard" visible="#{true}"
+    <url id="messboard" visible="#{securityContext.authenticated}"
          factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
          url="page://oracle/webcenter/portalapp/pages/messageBoard.jspx">
       <attributes>
         <attribute value="Message Board" isKey="false" attributeId="Title"/>
       </attributes>
     </url>
-    <url id="analytics" visible="#{true}"
+    <url id="analytics" visible="#{securityContext.authenticated}"
          factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
          url="page://oracle/webcenter/portalapp/pages/analytics.jspx">
       <attributes>
         <attribute value="Analytics" isKey="false" attributeId="Title"/>
       </attributes>
     </url>
-    <url id="blog" visible="#{true}"
+    <url id="blog" visible="#{securityContext.authenticated}"
          factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
          url="page://oracle/webcenter/portalapp/pages/blogs.jspx">
       <attributes>

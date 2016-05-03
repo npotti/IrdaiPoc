@@ -7,6 +7,15 @@
     <variableIterator id="variables"/>
     <page path="oracle.webcenter.portalapp.pagetemplates.pageTemplate_globePageDef"
           id="pageTemplateBinding" Refresh="ifNeeded"/>
+    <taskFlow id="WallDetailViewer1"
+              taskFlowId="/oracle/webcenter/peopleconnections/wall/controller/taskflows/WallDetailViewer.xml#WallDetailViewer"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="resourceId"
+                   value="${'UCM/Contribution Folders/Messages'}"/>
+      </parameters>
+    </taskFlow>
   </executables>
   <bindings/>
 </pageDefinition>

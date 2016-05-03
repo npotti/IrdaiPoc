@@ -209,6 +209,8 @@
                                url-prefix="#{request.scheme}://#{request.serverName}:#{request.serverPort}#{request.contextPath}"/>
     </portal:resource-mappings>
   </portal:adf-portal-config>
+  <doclibC:adf-doclib-config xmlns="http://xmlns.oracle.com/webcenter/doclib/config"
+                             primaryConnectionName="UCM"/>
   <mdsC:adf-mds-config version="11.1.1.000">
     <mds-config xmlns="http://xmlns.oracle.com/mds/config">
       <persistence-config>
@@ -251,6 +253,10 @@
                      metadata-store-usage="WebCenterFileMetadataStore"/>
           <namespace path="/oracle/webcenter/quicklinks/scopedMD"
                      metadata-store-usage="WebCenterFileMetadataStore"/>
+          <namespace path="/oracle/webcenter/analytics/scopedMD"
+                     metadata-store-usage="WebCenterFileMetadataStore"/>
+          <namespace path="/oracle/webcenter/people/scopedMD"
+                     metadata-store-usage="WebCenterFileMetadataStore"/>
         </metadata-namespaces>
         <metadata-store-usages>
           <metadata-store-usage id="WebCenterFileMetadataStore"
@@ -274,6 +280,4 @@
       </cache-config>
     </mds-config>
   </mdsC:adf-mds-config>
-  <doclibC:adf-doclib-config xmlns="http://xmlns.oracle.com/webcenter/doclib/config"
-                             primaryConnectionName="UCM"/>
 </adf-config>

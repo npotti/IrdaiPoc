@@ -312,6 +312,11 @@
     <display-name>PortalFrameworkContextListener</display-name>
     <listener-class>oracle.webcenter.portalframework.sitestructure.internal.view.PortalFrameworkContextListener</listener-class>
   </listener>
+  <listener>
+    <description>Analytics Service Context Listener</description>
+    <display-name>AnalyticsServiceContextListener</display-name>
+    <listener-class>oracle.webcenter.analytics.model.config.AnalyticsContextListener</listener-class>
+  </listener>
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -566,6 +571,12 @@
     <error-code>404</error-code>
     <location>/jsp/error404.jsp</location>
   </error-page>
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsff</url-pattern>
+      <is-xml>true</is-xml>
+    </jsp-property-group>
+  </jsp-config>
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>adfAuthentication</web-resource-name>
