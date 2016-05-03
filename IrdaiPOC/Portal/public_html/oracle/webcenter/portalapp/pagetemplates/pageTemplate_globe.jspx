@@ -181,6 +181,9 @@
                                           styleClass="menuButton AFStretchWidth">
                             <!-- pass node to processAction for setting current selection and navigation  -->
                             <f:attribute name="node" value="#{node2}"/>
+							 <af:showPopupBehavior popupId="childMenuPopup"
+                                                              align="endBefore"
+                                                              triggerType="mouseOver"/>
                             <c:if test="${node2.attributes['Target'] == '_popup'}">
                               <af:clientAttribute name="modelPath"
                                                   value="#{node2.navigationModel.metadataId}"/>
@@ -212,14 +215,13 @@
                                 <af:switcher id="switcher1"
                                              facetName="#{(empty node2.attributes['Target']) || (node2.attributes['Target'] == '_popup') ? 'command' : 'golink'}">
                                   <f:facet name="command">
-                                    <af:commandButton id="commandButton1"
+                                    <af:commandLink id="commandButton1"
                                                       text="#{node3.title}"
                                                       action="pprnav"
                                                       styleClass="menuButton AFStretchWidth"
-                                                      disabled="#{not node2.navigable}"
                                                       clientComponent="#{node2.attributes['Target'] == '_popup' ? true : false}"
                                                       inlineStyle="text-align:left;"
-                                                      actionListener="#{PageTemplateBean.processAction}">
+                                                      actionListener="#{navigationContext.processAction}">
                                       <!-- pass node to processAction for setting current selection and navigation  -->
                                       <f:attribute name="node"
                                                    value="#{node3}"/>
@@ -237,7 +239,7 @@
                                                             from="#{null}"/>
                                       <af:setActionListener to="#{sessionScope.mdmActiveAdminTab}"
                                                             from="#{node3.title}"/>
-                                    </af:commandButton>
+                                    </af:commandLink>
                                   </f:facet>
                                   <f:facet name="golink">
                                     <af:goLink id="goLink1"
