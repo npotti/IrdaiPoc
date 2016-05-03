@@ -165,8 +165,9 @@
                           animate="false" rendered="#{! empty node.children}">
                   <af:panelGroupLayout id="pt_pgl7" layout="vertical">
                     <af:forEach var="node2" varStatus="vs2"
-                                items="#{node.children}">
+                                items="#{node.children}">   
                       <af:spacer id="pt_sp10" height="5px"/>
+                      <af:subform id="pt_sl1234">
                       <af:switcher id="pt_sw2"
                                    facetName="#{(empty node2.attributes['Target']) || (node2.attributes['Target'] == '_popup') ? 'command' : 'golink'}">
                         <f:facet name="command">
@@ -186,7 +187,7 @@
                                                   value="#{node2.prettyUrl}"/>
                               <af:clientAttribute name="selectedTitle"
                                                   value="#{node2.title}"/>
-                              <af:showPopupBehavior popupId="::rendererPopup"
+                              <af:showPopupBehavior popupId=":::rendererPopup"
                                                     triggerType="action"/>
                             </c:if>
                           </af:commandLink>
@@ -198,6 +199,57 @@
                                      inlineStyle="font-size:small;#{node2.selected ? 'font-weight:bold;' : ''}"/>
                         </f:facet>
                       </af:switcher>
+                      <!--af:spacer id="pt_s1" height="5px"/-->
+                          <af:popup id="childMenuPopup"
+                                    contentDelivery="immediate"
+                                    rendered="#{! empty node2.children}"
+                                    animate="false">
+                            <af:panelGroupLayout id="pt_p" layout="vertical"
+                                                 inlineStyle="background-color:Gray;">
+                              <af:forEach var="node3" varStatus="vs3"
+                                          items="#{node2.children}">
+                                <af:switcher id="switcher1"
+                                             facetName="#{(empty node2.attributes['Target']) || (node2.attributes['Target'] == '_popup') ? 'command' : 'golink'}">
+                                  <f:facet name="command">
+                                    <af:commandButton id="commandButton1"
+                                                      text="#{node3.title}"
+                                                      action="pprnav"
+                                                      styleClass="menuButton AFStretchWidth"
+                                                      disabled="#{not node2.navigable}"
+                                                      clientComponent="#{node2.attributes['Target'] == '_popup' ? true : false}"
+                                                      inlineStyle="text-align:left;"
+                                                      actionListener="#{PageTemplateBean.processAction}">
+                                      <!-- pass node to processAction for setting current selection and navigation  -->
+                                      <f:attribute name="node"
+                                                   value="#{node3}"/>
+                                      <c:if test="${node3.attributes['Target'] == '_popup'}">
+                                        <af:clientAttribute name="modelPath"
+                                                            value="#{node3.navigationModel.metadataId}"/>
+                                        <af:clientAttribute name="selectedPrettyUrl"
+                                                            value="#{node3.prettyUrl}"/>
+                                        <af:clientAttribute name="selectedTitle"
+                                                            value="#{node3.title}"/>
+                                        <af:showPopupBehavior popupId=":::rendererPopup"
+                                                              triggerType="action"/>
+                                      </c:if>
+                                      <af:setActionListener to="#{sessionScope.breadcrumbText}"
+                                                            from="#{null}"/>
+                                      <af:setActionListener to="#{sessionScope.mdmActiveAdminTab}"
+                                                            from="#{node3.title}"/>
+                                    </af:commandButton>
+                                  </f:facet>
+                                  <f:facet name="golink">
+                                    <af:goLink id="goLink1"
+                                               text="#{node3.title}"
+                                               destination="#{node3.goLinkPrettyUrl}"
+                                               targetFrame="#{node3.attributes['Target']}"
+                                               inlineStyle="font-size:small;#{node2.selected ? 'font-weight:bold;' : ''}"/>
+                                  </f:facet>
+                                </af:switcher>
+                              </af:forEach>
+                            </af:panelGroupLayout>
+                          </af:popup>
+                        </af:subform>
                     </af:forEach>
                   </af:panelGroupLayout>
                 </af:popup>

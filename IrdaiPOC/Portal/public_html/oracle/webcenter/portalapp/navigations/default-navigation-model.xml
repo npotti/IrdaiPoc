@@ -42,13 +42,37 @@
           </attributes>
           <contents/>
         </url>
-        <url id="hCommitteesl" visible="#{true}"
-             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
-             url="page://oracle/webcenter/portalapp/pages/health/hCommittees.jspx">
+        <folder visible="#{true}" id="hCommitte">
           <attributes>
-            <attribute value="Committes" isKey="false" attributeId="Title"/>
+            <attribute isKey="false" value="Committes" attributeId="Title"/>
           </attributes>
-        </url>
+          <contents>
+            <url visible="#{true}"
+                 factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+                 id="hreports"
+                 url="page://oracle/webcenter/portalapp/pages/health/hReports.jspx">
+              <attributes>
+                <attribute isKey="false" value="Reports" attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}"
+                 factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+                 id="hDraft"
+                 url="page://oracle/webcenter/portalapp/pages/health/hDrafts.jspx">
+              <attributes>
+                <attribute isKey="false" value="Draft MOM" attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}"
+                 factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+                 id="hAMins"
+                 url="page://oracle/webcenter/portalapp/pages/health/Minutes.jspx">
+              <attributes>
+                <attribute isKey="false" value="Approved Minutes" attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </folder>
       </contents>
     </folder>
     <folder id="vigilance"
