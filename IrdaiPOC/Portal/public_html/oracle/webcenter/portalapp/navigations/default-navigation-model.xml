@@ -135,6 +135,20 @@
         <attribute value="Blogs" isKey="false" attributeId="Title"/>
       </attributes>
     </url>
+    <url id="uploadContent"
+         factoryClass="oracle.webcenter.portalframework.sitestructure.rc.TaskFlowResourceFactory"
+         visible="#{securityContext.authenticated}"
+         url="taskflow://oracle/webcenter/doclib/view/jsf/taskflows/mainView.xml#doclib-document-library">
+      <attributes>
+        <attribute attributeId="Title" isKey="false"
+                   value="Upload Content"/>
+      </attributes>
+      <parameters>
+            <parameter id="connectionName">${'UCM'}</parameter>
+             <parameter id="startFolderPath">${'/Contribution Folders/UserCheckIns/'}</parameter>
+            <parameter id="layout">${'explorer'}</parameter>
+          </parameters>
+    </url>
   </contents>
   <schema resourceBundle="oracle.adf.rc.attribute.nls.AttributeBundle">
     <descriptor multivalue="false" shortLabelKey="TITLE.SHORT_PROMPT_KEY"
