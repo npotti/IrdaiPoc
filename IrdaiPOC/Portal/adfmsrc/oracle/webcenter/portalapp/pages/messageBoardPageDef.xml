@@ -12,8 +12,7 @@
               activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding">
       <parameters>
-        <parameter id="resourceId"
-                   value="${'UCM/Contribution Folders/Messages'}"/>
+        <parameter id="resourceId" value="#{securityContext.userName}"/>
       </parameters>
     </taskFlow>
   </executables>

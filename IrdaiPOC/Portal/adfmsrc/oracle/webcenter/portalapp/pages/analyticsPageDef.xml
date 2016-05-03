@@ -12,6 +12,7 @@
               activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding">
       <parameters>
+        <parameter id="applicationName" value="#{'IrdaiPOC_application1'}"/>
         <parameter id="maxDataPointsPerSeries" value="25"/>
       </parameters>
     </taskFlow>

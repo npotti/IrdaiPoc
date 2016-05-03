@@ -6,18 +6,22 @@
             <roles>
                 <role>
                     <name>HealthAdmin</name>
+                    <guid>666118B0113F11E6BF9D6796AE332A9E</guid>
                     <display-name>Health Admin</display-name>
                 </role>
                 <role>
                     <name>HealthModerator</name>
+                    <guid>666118B1113F11E6BF9D6796AE332A9E</guid>
                     <display-name>Health Moderator</display-name>
                 </role>
                 <role>
                     <name>VigilanceAdmin</name>
+                    <guid>666118B2113F11E6BF9D6796AE332A9E</guid>
                     <display-name>Vigilance Admin</display-name>
                 </role>
                 <role>
                     <name>VigilanceModerator</name>
+                    <guid>666118B3113F11E6BF9D6796AE332A9E</guid>
                     <display-name>Vigilance Moderator</display-name>
                 </role>
             </roles>
@@ -3638,6 +3642,36 @@
                                 <name>/oracle/webcenter/people/view/jsf/regions/.*</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/oracle/webcenter/collab/announcement/view/taskflows/main-view-definition.xml#announcement-main-view</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/oracle/webcenter/collab/announcement/view/taskflows/mini-view-definition.xml#announcement-mini-view</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/oracle/webcenter/collab/announcement/view/taskflows/link-existing-view-definition.xml#link-existing-view-definition</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/oracle/webcenter/collab/announcement/view/taskflows/config-view-definition.xml#announcement-config-view</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/oracle/webcenter/collab/announcement/view/taskflows/announcement-view-definition.xml#announcement-resource-view</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/oracle/webcenter/collab/announcement/view/taskflows/.*</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -3768,6 +3802,16 @@
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/view/oracle/webcenter/activitygraph/controller/taskflows/top-items.xml#top-items</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.collab.announcement.view.pageDefs.oracle_webcenter_collab_announcement_view_jsf_pages_AnnouncementLinkExistingViewPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.collab.announcement.view.pageDefs.oracle_webcenter_collab_announcement_view_jsf_pages_AnnouncementLinkResourceViewPageDef</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>
@@ -3919,14 +3963,19 @@
                                 <name>oracle.webcenter.portalapp.pages.userSearchPageDef</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>oracle.webcenter.portalapp.pages.UCMSearchPageDef</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
                         <grantee>
                             <principals>
                                 <principal>
+                                    <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
                                     <name>HealthAdmin</name>
-                                    <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
                                 </principal>
                             </principals>
                         </grantee>
@@ -3967,8 +4016,8 @@
                         <grantee>
                             <principals>
                                 <principal>
+                                    <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
                                     <name>HealthModerator</name>
-                                    <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
                                 </principal>
                             </principals>
                         </grantee>
@@ -4009,8 +4058,8 @@
                         <grantee>
                             <principals>
                                 <principal>
-                                    <name>VigilanceAdmin</name>
                                     <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+                                    <name>VigilanceAdmin</name>
                                 </principal>
                             </principals>
                         </grantee>
@@ -4061,8 +4110,8 @@
                         <grantee>
                             <principals>
                                 <principal>
-                                    <name>VigilanceModerator</name>
                                     <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+                                    <name>VigilanceModerator</name>
                                 </principal>
                             </principals>
                         </grantee>

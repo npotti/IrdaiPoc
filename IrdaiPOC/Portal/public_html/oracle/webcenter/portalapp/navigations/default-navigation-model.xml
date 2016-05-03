@@ -168,7 +168,7 @@
         <attribute attributeId="Title" isKey="false" value="Content"/>
       </attributes>
     </url>
-    <url visible="#{true}"
+    <url visible="#{securityContext.authenticated}"
          factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
          id="csSrc"
          url="page://oracle/webcenter/portalapp/pages/UCMSearch.jspx">
