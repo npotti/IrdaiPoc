@@ -9,7 +9,63 @@
       <af:form id="f1">
         <af:pageTemplate viewId="/oracle/webcenter/portalapp/pagetemplates/pageTemplate_globe.jspx"
                          value="#{bindings.pageTemplateBinding}" id="pt1">
-          <f:facet name="content"/>
+          <f:facet name="content">
+            <af:group id="g1">
+			<f:verbatim> 
+              <table style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-COLLAPSE: collapse; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; WIDTH: 6.95in" cellspacing="0" cellpadding="0" width="667" border="1">
+    <tbody>
+        <tr>
+            <td style="BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; BORDER-LEFT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; WIDTH: 1.45in; BACKGROUND-COLOR: transparent" valign="top" width="139">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal"><strong>Name and Designation</strong></div>
+            </td>
+            <td style="BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; WIDTH: 135pt; BACKGROUND-COLOR: transparent; BORDER-LEFT-COLOR: #d4d0c8" valign="top" width="180">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal"><strong>Address</strong></div>
+            </td>
+            <td style="BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; WIDTH: 261pt; BACKGROUND-COLOR: transparent; BORDER-LEFT-COLOR: #d4d0c8" valign="top" width="348">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal"><strong>Contact Details</strong></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP-COLOR: #d4d0c8; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; BORDER-LEFT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; WIDTH: 1.45in; BACKGROUND-COLOR: transparent" valign="top" width="139">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">Mr. T.S. Vijayan, Chairman</div>
+            </td>
+            <td style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP-COLOR: #d4d0c8; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; WIDTH: 135pt; BACKGROUND-COLOR: transparent; BORDER-LEFT-COLOR: #d4d0c8" valign="top" width="180">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">Insurance Regulatory and Development Authority of India, Parishram Bhavan, 3<sup>rd</sup> Floor, Basheer Bagh, Hyderabad – 500004</div>
+            </td>
+            <td style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP-COLOR: #d4d0c8; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; WIDTH: 261pt; BACKGROUND-COLOR: transparent; BORDER-LEFT-COLOR: #d4d0c8" valign="top" width="348">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">(040)23381100</div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP-COLOR: #d4d0c8; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; BORDER-LEFT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; WIDTH: 1.45in; BACKGROUND-COLOR: transparent" valign="top" width="139">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">Mr A V Rao, Chief Vigilance Officer </div>
+            </td>
+            <td style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP-COLOR: #d4d0c8; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; WIDTH: 135pt; BACKGROUND-COLOR: transparent; BORDER-LEFT-COLOR: #d4d0c8" valign="top" width="180">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">As Above</div>
+            </td>
+            <td style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP-COLOR: #d4d0c8; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; WIDTH: 261pt; BACKGROUND-COLOR: transparent; BORDER-LEFT-COLOR: #d4d0c8" valign="top" width="348">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">(D): (040)23381100</div>
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">Email:&nbsp;<strong><font color="#0000ff">vigilance [at] irda [dot] gov [dot] in<strong>&nbsp;&nbsp;</strong></font></strong></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP-COLOR: #d4d0c8; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; BORDER-LEFT: windowtext 1pt solid; PADDING-RIGHT: 5.4pt; WIDTH: 1.45in; BACKGROUND-COLOR: transparent" valign="top" width="139">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">The Secretary, Central Vigilance Commission </div>
+            </td>
+            <td style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP-COLOR: #d4d0c8; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; WIDTH: 135pt; BACKGROUND-COLOR: transparent; BORDER-LEFT-COLOR: #d4d0c8" valign="top" width="180">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">Satarkata Bhavan, A-Block, GPO Complex, INA, New Delhi 110023</div>
+            </td>
+            <td style="BORDER-RIGHT: windowtext 1pt solid; BORDER-TOP-COLOR: #d4d0c8; BORDER-BOTTOM: windowtext 1pt solid; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; WIDTH: 261pt; BACKGROUND-COLOR: transparent; BORDER-LEFT-COLOR: #d4d0c8" valign="top" width="348">
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">Tel No(011) 246511001-8, (Monday – Friday) from ( 09.30 A.M-6.00 P.M) </div>
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">Toll free No. 1800-11001809( BSNL, MTNL &amp; TTSL throughout India and all operators in Delhi) </div>
+            <div style="MARGIN: 0in 0in 0pt; LINE-HEIGHT: normal">Email : <a href="mailto:vigilance@hub.nic.in"><strong><font color="#0000ff">vigilance [at] hub [dot] nic [dot] in</font></strong></a></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+            </f:verbatim> 
+			</af:group>
+          </f:facet>
         </af:pageTemplate>
       </af:form>
     </af:document>
