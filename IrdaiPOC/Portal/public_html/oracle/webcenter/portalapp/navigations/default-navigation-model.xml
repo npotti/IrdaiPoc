@@ -17,7 +17,7 @@
     <folder id="hDepartment"
             visible="#{securityContext.userInRole['HealthAdmin,HealthModerator']}">
       <attributes>
-        <attribute value="Health Department" isKey="false" attributeId="Title"/>
+        <attribute value="Health" isKey="false" attributeId="Title"/>
       </attributes>
       <contents>
         <url id="hEDrafts" visible="#{true}"
@@ -53,7 +53,7 @@
     <folder id="vigilance"
             visible="#{securityContext.userInRole['VigilanceAdmin,VigilanceModerator']}">
       <attributes>
-        <attribute value="Vigilance Department" isKey="false" attributeId="Title"/>
+        <attribute value="Vigilance" isKey="false" attributeId="Title"/>
       </attributes>
       <contents>
         <url id="vCirculars" visible="#{true}"
