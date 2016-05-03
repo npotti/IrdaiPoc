@@ -46,7 +46,8 @@
               <af:goLink id="pt_glnk1" text="#{portalResource['admin']}"
                          destination="/admin"
                          rendered="#{attrs.showAdmin and !attrs.isAdminPage}"
-                         inlineStyle="font-size:small; color: #014B99;"/>
+                         inlineStyle="font-size:small; color: #014B99;"
+                         visible="#{securityContext.userName eq 'weblogic'}"/>
               <!-- 2b) Back to Portal link -->
               <af:goLink id="pt_glnk2" text="#{portalResource['back']}"
                          destination="/faces/wcnav_currentSelection"
