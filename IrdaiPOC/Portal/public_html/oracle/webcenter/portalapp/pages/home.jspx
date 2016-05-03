@@ -26,17 +26,63 @@
                   <af:panelGroupLayout id="vmarquee" layout="vertical">
                     <af:spacer width="10" height="10" id="s1"/>
                     <f:verbatim><marquee direction="up">
-                    <af:panelGroupLayout id="marqla" halign="center"
-                                         valign="middle" layout="vertical">
-                    <af:outputText value="outputText2"
-                                inlineStyle="font-weight:bold;"/>
-                    <af:outputText value="outputTex2"
-                                 inlineStyle="font-weight:bold;"/>
-                    <af:outputText value="outputTxt2"
-                                inlineStyle="font-weight:bold;"/>         
-                                                        </af:panelGroupLayout>
+                    <af:panelGroupLayout id="marpar" layout="vertical">
+                    <af:panelGroupLayout id="marqla" halign="left"
+                                         valign="baseline" layout="vertical">
+                    <af:outputText value="22-04-2016 "
+                                   inlineStyle="color:Blue; font-size:small;"/>
+                    <af:outputText value="Life Product"
+                                 inlineStyle="font-weight:bold; color:Blue; font-size:small;"/>
+                    <af:outputText value="Bajaj Allianz Life Insurance Co. Ltd. "/>
+                        
+                                <af:outputFormatted value='&lt;a href="https://www.irdai.gov.in/ADMINCMS/cms/frmGeneral_NoYearLayout.aspx?page=PageNo581" target="_blank">more...&lt;/a>'
+                                                id="of4">
+                              '&gt;
+                            </af:outputFormatted>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="marql1a" halign="left"
+                                         valign="baseline" layout="vertical">
+                    <af:outputText value="03-05-2016"
+                                   inlineStyle="color:Blue; font-size:small;"/>
+                    <af:outputText value="Life Products"
+                                 inlineStyle="font-weight:bold; color:Blue; font-size:small;"/>
+                    <af:outputText value="Terms and Conditions of Life Products for F.Y. 2015-16 "/>
+                    <af:outputFormatted value='&lt;a href="https://www.irdai.gov.in/ADMINCMS/cms/NormalData_Layout.aspx?page=PageNo2602" target="_blank">more...&lt;/a>'
+                                                id="of3">
+                              '&gt;
+                            </af:outputFormatted>
+                         </af:panelGroupLayout>
+                        <af:panelGroupLayout id="ma1rqla" halign="left"
+                                         valign="baseline" layout="vertical">
+                    <af:outputText value="29-04-2016"
+                                   inlineStyle="color:Blue; font-size:small;"/>
+                    <af:outputText value="To all"
+                                 inlineStyle="font-weight:bold; color:Blue; font-size:small;"/>
+                    <af:outputText value="Research Grant Scheme"/>
+                    <af:outputFormatted value='&lt;a href="https://www.irdai.gov.in/ADMINCMS/cms/frmGeneral_Layout.aspx?page=PageNo2826" target="_blank">more...&lt;/a>'
+                                                id="of2">
+                              '&gt;
+                            </af:outputFormatted>
+                         
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="mar1qla" halign="left"
+                                         valign="baseline" layout="vertical">
+                    <af:outputText value="29-04-2016"
+                                   inlineStyle="color:Blue; font-size:small;"/>
+                    <af:outputText value="IRDA Journal February, 2016"
+                                 inlineStyle="font-weight:bold; color:Blue; font-size:small;"/>
+                    <af:outputText value="Role of Intermediaries in Insurance Industry – Key to servicing of customer "/>
+                            <af:outputFormatted value='&lt;a href="https://www.irdai.gov.in/ADMINCMS/cms/frmGeneral_Layout.aspx?page=PageNo2827" target="_blank">more...&lt;/a>'
+                                                id="of1">
+                              '&gt;
+                            </af:outputFormatted>
+                          </af:panelGroupLayout>
+                          <f:facet name="separator">
+                          <af:spacer height="20"/>
+                          </f:facet>
+                        </af:panelGroupLayout>
                                                         </marquee> </f:verbatim> 
-                  </af:panelGroupLayout>0
+                  </af:panelGroupLayout>
                 </af:panelGroupLayout>
               </cust:panelCustomizable>
               <f:facet name="editor">
