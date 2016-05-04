@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="ReimbursementPOJO" Package="com.irdai.wc.portal.beans.analytics"
+          BeanClass="com.irdai.wc.portal.beans.analytics.ReimbursementPOJO"
+          isJavaBased="true">
+  <Attribute Name="claimDate" Type="java.util.Date"/>
+  <Attribute Name="claimAmount" Type="java.lang.Integer"/>
+  <Attribute Name="approvalAmount" Type="java.lang.Integer"/>
+  <Attribute Name="year" Type="java.lang.String"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.irdai.wc.portal.beans.analytics.ReimbursementPOJO"
+                     BeanClass="com.irdai.wc.portal.beans.analytics.ReimbursementPOJO"
+                     id="ReimbursementPOJO">
+    <ParameterInfo id="claimDate" Type="java.util.Date" isStructured="false"/>
+    <ParameterInfo id="claimAmount" Type="java.lang.Integer"
+                   isStructured="false"/>
+    <ParameterInfo id="approvalAmount" Type="java.lang.Integer"
+                   isStructured="false"/>
+    <ParameterInfo id="year" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.irdai.wc.portal.beans.analytics.ReimbursementPOJO"
+                     BeanClass="com.irdai.wc.portal.beans.analytics.ReimbursementPOJO"
+                     id="ReimbursementPOJO"/>
+</JavaBean>

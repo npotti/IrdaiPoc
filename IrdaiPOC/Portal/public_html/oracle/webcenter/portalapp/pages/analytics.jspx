@@ -2,16 +2,58 @@
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
           xmlns:f="http://java.sun.com/jsf/core"
           xmlns:h="http://java.sun.com/jsf/html"
-          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <f:view>
     <af:document id="d1">
+      <af:messages id="m1"/>
       <af:form id="f1">
         <af:pageTemplate viewId="/oracle/webcenter/portalapp/pagetemplates/pageTemplate_globe.jspx"
                          value="#{bindings.pageTemplateBinding}" id="pt1">
           <f:facet name="content">
-            <af:region value="#{bindings.analyticsconsole1.regionModel}"
-                       id="r1"/>
+            <af:panelGroupLayout id="pgl1" layout="vertical"
+                                 inlineStyle="padding-left:100px;">
+              <af:spacer width="10" height="10" id="s2"/>
+              <af:region value="#{bindings.analyticsconsole1.regionModel}"
+                         id="r1"/>
+              <af:spacer width="10" height="10" id="s3"/>
+              <af:panelBox text="Claims Chart" id="pb1">
+                <f:facet name="toolbar"/>
+                <dvt:barGraph id="barGraph1"
+                              value="#{bindings.reimbursements.graphModel}"
+                              subType="BAR_VERT_CLUST">
+                  <dvt:background>
+                    <dvt:specialEffects/>
+                  </dvt:background>
+                  <dvt:graphPlotArea/>
+                  <dvt:seriesSet>
+                    <dvt:series/>
+                  </dvt:seriesSet>
+                  <dvt:o1Axis/>
+                  <dvt:y1Axis/>
+                  <dvt:legendArea automaticPlacement="AP_NEVER"/>
+                </dvt:barGraph>
+              </af:panelBox>
+              <af:spacer width="10" height="30" id="s1"/>
+              <af:panelBox text="Year 2016 Insurance Margin" id="pb2">
+                <f:facet name="toolbar"/>
+                <dvt:pieGraph id="pieGraph1"
+                              value="#{bindings.insureData.graphModel}"
+                              subType="PIE">
+                  <dvt:background>
+                    <dvt:specialEffects/>
+                  </dvt:background>
+                  <dvt:graphPieFrame/>
+                  <dvt:seriesSet>
+                    <dvt:series/>
+                  </dvt:seriesSet>
+                  <dvt:sliceLabel/>
+                  <dvt:pieLabel rendered="true"/>
+                  <dvt:legendArea automaticPlacement="AP_NEVER"/>
+                </dvt:pieGraph>
+              </af:panelBox>
+            </af:panelGroupLayout>
           </f:facet>
         </af:pageTemplate>
       </af:form>

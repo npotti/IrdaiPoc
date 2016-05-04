@@ -5,6 +5,7 @@
       <value n="adrs-instance-binding" v="DefaultServer"/>
    </hash>
    <value n="application-package-prefix" v="com.irdai.wc"/>
+   <url n="application-source-directory" path="src/"/>
    <value n="appTemplateId" v="#WebCenter Portal Framework Application"/>
    <hash n="component-versions">
       <value n="oracle.adf.share.dt.migration.jps.JaznCredStoreMigratorHelper" v="11.1.1.1.0"/>
@@ -85,6 +86,8 @@
          <string v="IrdaiPOC_application1"/>
       </list>
       <value n="Security-Deployment-Migrate-Users-And-Groups-Key" v="false"/>
+      <value n="Security-Deployment-Overwrite-Application-Policies-Key" v="false"/>
+      <value n="Security-Deployment-Overwrite-Credentials-Key" v="false"/>
    </hash>
    <hash n="oracle.webcenter.dt.config.WebCenterSettings">
       <value n="iterativeDevelopment" v="true"/>

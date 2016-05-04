@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="InsurancePOJO" Package="com.irdai.wc.portal.beans.analytics"
+          BeanClass="com.irdai.wc.portal.beans.analytics.InsurancePOJO"
+          isJavaBased="true">
+  <Attribute Name="insurerName" Type="java.lang.String"/>
+  <Attribute Name="margin" Type="java.lang.Integer"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.irdai.wc.portal.beans.analytics.InsurancePOJO"
+                     BeanClass="com.irdai.wc.portal.beans.analytics.InsurancePOJO"
+                     id="InsurancePOJO">
+    <ParameterInfo id="insurerName" Type="java.lang.String"
+                   isStructured="false"/>
+    <ParameterInfo id="margin" Type="java.lang.Integer" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

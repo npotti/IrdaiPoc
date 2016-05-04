@@ -2,4 +2,5 @@
 <MetadataDirectory xmlns="http://xmlns.oracle.com/adfm/metainf"
                    version="11.1.1.0.0">
   <DataBindingRegistry path="com/irdai/wc/portal/DataBindings.cpx"/>
+  <DataControlRegistry path="com/irdai/wc/portal/DataControls.dcx"/>
 </MetadataDirectory>

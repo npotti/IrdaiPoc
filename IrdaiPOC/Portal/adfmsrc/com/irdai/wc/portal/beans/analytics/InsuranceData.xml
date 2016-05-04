@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="InsuranceData" Package="com.irdai.wc.portal.beans.analytics"
+          BeanClass="com.irdai.wc.portal.beans.analytics.InsuranceData"
+          isJavaBased="true">
+  <AccessorAttribute id="insureData" IsCollection="true"
+                     BeanClass="com.irdai.wc.portal.beans.analytics.InsurancePOJO"
+                     CollectionBeanClass="UpdateableCollection"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.irdai.wc.portal.beans.analytics.InsuranceData"
+                     BeanClass="com.irdai.wc.portal.beans.analytics.InsuranceData"
+                     id="InsuranceData"/>
+</JavaBean>

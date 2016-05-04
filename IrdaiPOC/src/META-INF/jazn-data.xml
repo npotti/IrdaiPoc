@@ -3,11 +3,23 @@
     <jazn-realm default="jazn.com">
         <realm>
             <name>jazn.com</name>
+            <users>
+                <user>
+                    <name>donga</name>
+                    <credentials>{903}S7T4kDVaeMKZ9QwvbipzShISFd7scBXD</credentials>
+                </user>
+            </users>
             <roles>
                 <role>
                     <name>HealthAdmin</name>
                     <guid>666118B0113F11E6BF9D6796AE332A9E</guid>
                     <display-name>Health Admin</display-name>
+                    <members>
+                        <member>
+                            <type>user</type>
+                            <name>donga</name>
+                        </member>
+                    </members>
                 </role>
                 <role>
                     <name>HealthModerator</name>
@@ -18,6 +30,12 @@
                     <name>VigilanceAdmin</name>
                     <guid>666118B2113F11E6BF9D6796AE332A9E</guid>
                     <display-name>Vigilance Admin</display-name>
+                    <members>
+                        <member>
+                            <type>user</type>
+                            <name>donga</name>
+                        </member>
+                    </members>
                 </role>
                 <role>
                     <name>VigilanceModerator</name>

@@ -7,6 +7,19 @@
     <variableIterator id="variables"/>
     <page path="oracle.webcenter.portalapp.pagetemplates.pageTemplate_globePageDef"
           id="pageTemplateBinding" Refresh="ifNeeded"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ReimbursementData"
+              id="ReimbursementDataIterator"/>
+    <accessorIterator MasterBinding="ReimbursementDataIterator"
+                      Binds="reimbursements" RangeSize="-1"
+                      DataControl="ReimbursementData"
+                      BeanClass="com.irdai.wc.portal.beans.analytics.ReimbursementPOJO"
+                      id="reimbursementsIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="InsuranceData"
+              id="InsuranceDataIterator"/>
+    <accessorIterator MasterBinding="InsuranceDataIterator" Binds="insureData"
+                      RangeSize="-1" DataControl="InsuranceData"
+                      BeanClass="com.irdai.wc.portal.beans.analytics.InsurancePOJO"
+                      id="insureDataIterator"/>
     <taskFlow id="analyticsconsole1"
               taskFlowId="/oracle/webcenter/analytics/view/jsf/taskflows/seeded/analytics-console.xml#analytics-console"
               activation="deferred"
@@ -17,5 +30,33 @@
       </parameters>
     </taskFlow>
   </executables>
-  <bindings/>
+  <bindings>
+    <graph IterBinding="reimbursementsIterator" id="reimbursements"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="BAR_VERT_CLUST">
+      <graphDataMap leafOnly="true">
+        <series>
+          <data>
+            <item value="claimAmount"/>
+            <item value="approvalAmount"/>
+          </data>
+        </series>
+        <groups>
+          <item value="year"/>
+        </groups>
+      </graphDataMap>
+    </graph>
+    <graph IterBinding="insureDataIterator" id="insureData"
+           xmlns="http://xmlns.oracle.com/adfm/dvt" type="PIE">
+      <graphDataMap leafOnly="true">
+        <series>
+          <item value="insurerName"/>
+        </series>
+        <groups>
+          <data>
+            <item value="margin"/>
+          </data>
+        </groups>
+      </graphDataMap>
+    </graph>
+  </bindings>
 </pageDefinition>
