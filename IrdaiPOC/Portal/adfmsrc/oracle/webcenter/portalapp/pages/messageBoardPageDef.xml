@@ -15,6 +15,14 @@
         <parameter id="resourceId" value="#{securityContext.userName}"/>
       </parameters>
     </taskFlow>
+    <taskFlow id="connectionsminiviewtaskflow1"
+              taskFlowId="/oracle/webcenter/peopleconnections/connections/controller/taskflows/connections-mini-view-taskflow.xml#connections-mini-view-taskflow"
+              activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="userId" value="#{securityContext.userName}"/>
+      </parameters>
+    </taskFlow>
   </executables>
   <bindings/>
 </pageDefinition>

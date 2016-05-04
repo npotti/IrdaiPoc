@@ -10,8 +10,12 @@
         <af:pageTemplate viewId="/oracle/webcenter/portalapp/pagetemplates/pageTemplate_globe.jspx"
                          value="#{bindings.pageTemplateBinding}" id="pt1">
           <f:facet name="content">
-            <af:region value="#{bindings.WallDetailViewer1.regionModel}"
-                       id="r1"/>
+            <af:group id="g1">
+              <af:region value="#{bindings.connectionsminiviewtaskflow1.regionModel}"
+                         id="r3"/>
+              <af:region value="#{bindings.WallDetailViewer1.regionModel}"
+                         id="r1"/>
+            </af:group>
           </f:facet>
         </af:pageTemplate>
       </af:form>

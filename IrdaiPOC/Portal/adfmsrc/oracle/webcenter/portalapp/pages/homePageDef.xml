@@ -17,8 +17,8 @@
               taskFlowId="#{pageEditorBean.pageEditorPanel}"
               activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
-    <taskFlow id="announcementmainview1"
-              taskFlowId="/oracle/webcenter/collab/announcement/view/taskflows/main-view-definition.xml#announcement-main-view"
+    <taskFlow id="announcementminiview1"
+              taskFlowId="/oracle/webcenter/collab/announcement/view/taskflows/mini-view-definition.xml#announcement-mini-view"
               activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding">
       <parameters>
