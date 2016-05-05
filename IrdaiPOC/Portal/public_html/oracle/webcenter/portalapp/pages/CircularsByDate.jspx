@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/oracle/webcenter/portalapp/pagetemplates/pageTemplate_globe.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="content">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
+              <af:spacer width="10" height="10" id="s1"/>
+              <af:panelGroupLayout id="pgl2" layout="horizontal">
+                <af:selectOneChoice label="Date" id="soc1" autoSubmit="true"
+                                    valueChangeListener="#{pageFlowScope.CircularsBean.contentByDate}">
+                  <af:selectItem label="MAY 04 2016" value="MAY 04 2016"
+                                 id="si3"/>
+                  <af:selectItem label="MAY 05 2016" value="MAY 05 2016"
+                                 id="si2"/>
+                  <af:selectItem label="MAY 06 2016" value="MAY 06 2016"
+                                 id="si1"/>
+                </af:selectOneChoice>
+              </af:panelGroupLayout>
+              <af:table var="row" rowBandingInterval="0" id="t1"
+                        value="#{pageFlowScope.CircularsBean.itemsUi}"
+                        styleClass="AFStretchWidth">
+                <af:column sortable="false" headerText="Title" id="c2">
+                  <af:outputText value="#{row.docTitle}" id="ot3"/>
+                </af:column>
+                <af:column sortable="false" headerText="Content ID" id="c5">
+                  <af:outputText value="#{row.docInternalName}" id="ot2"/>
+                </af:column>
+                <af:column sortable="false" headerText="Author" id="c3">
+                  <af:outputText value="#{row.author}" id="ot5"/>
+                </af:column>
+                <af:column sortable="false" headerText="col4" id="c4"
+                           rendered="false">
+                  <af:outputText value="#{row.col4}" id="ot4"/>
+                </af:column>
+                <af:column sortable="false" headerText="col5" id="c1"
+                           rendered="false">
+                  <af:outputText value="#{row.col5}" id="ot1"/>
+                </af:column>
+              </af:table>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

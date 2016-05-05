@@ -5,4 +5,9 @@
     <managed-bean-class id="__3">com.irdai.wc.portal.beans.search.UCMSearchBean</managed-bean-class>
     <managed-bean-scope id="__2">pageFlow</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name id="__6">CircularsBean</managed-bean-name>
+    <managed-bean-class id="__7">com.irdai.wc.portal.beans.circulars.CircularsBean</managed-bean-class>
+    <managed-bean-scope id="__5">pageFlow</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

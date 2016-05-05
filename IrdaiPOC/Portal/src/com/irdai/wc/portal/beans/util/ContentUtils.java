@@ -255,6 +255,49 @@ public class ContentUtils {
 //            }
 //            dDocTitle <starts> `nitish`
 //        }
+        
+    public List<ContentItem> getFolderContentItemsByCollectionPath(String collectionPath) {
+        DataBinder dataBinder = null;
+        dataBinder = idcClient.createBinder();
+        List<ContentItem> contentItems = null;
+        ServiceResponse response = null;
+        IdcContext userContext = null;
+        try {
+            userContext = new IdcContext("weblogic");
+            logger.info("ContentUtils UserContext:" + userContext.getUser());
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+        } catch (IdcClientException ice) {
+            ice.printStackTrace();
+        } catch (NamingException ne) {
+            ne.printStackTrace();
+        }
+        if (collectionPath != null) {
+            dataBinder.putLocal(IDCSERVICE, COLLECTION_CONTENT_SERVICE);
+            dataBinder.putLocal(hasCollectionPath, TRUE);
+            dataBinder.putLocal(dCollectionPath, collectionPath);
+
+            try {
+                response = idcClient.sendRequest(userContext, dataBinder);
+                DataBinder serverBinder = response.getResponseAsBinder();
+
+                DataResultSet resultSet =
+                    serverBinder.getResultSet(CONTENTS_RESULTSET);
+                contentItems = new ArrayList<ContentItem>();
+                for (DataObject obj : resultSet.getRows()) {
+                    ContentItem item = getPopulatedContentItem(obj);
+                    contentItems.add(item);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                if (response != null) {
+                    response.close();
+                }
+            }
+        }
+        return contentItems;
+    }
 
 }
 

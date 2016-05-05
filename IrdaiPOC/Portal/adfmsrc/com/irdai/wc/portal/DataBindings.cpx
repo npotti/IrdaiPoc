@@ -59,6 +59,8 @@
           usageId="com_irdai_wc_portal_userSearchPageDef"/>
     <page path="/oracle/webcenter/portalapp/pages/UCMSearch.jspx"
           usageId="com_irdai_wc_portal_UCMSearchPageDef"/>
+    <page path="/oracle/webcenter/portalapp/pages/CircularsByDate.jspx"
+          usageId="com_irdai_wc_portal_CircularsByDatePageDef"/>
   </pageMap>
   <definitionFactories>
     <factory nameSpace="http://xmlns.oracle.com/portlet/bindings"
@@ -125,6 +127,8 @@
           path="oracle.webcenter.portalapp.pages.userSearchPageDef"/>
     <page id="com_irdai_wc_portal_UCMSearchPageDef"
           path="oracle.webcenter.portalapp.pages.UCMSearchPageDef"/>
+    <page id="com_irdai_wc_portal_CircularsByDatePageDef"
+          path="oracle.webcenter.portalapp.pages.CircularsByDatePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="InsuranceData" path="com.irdai.wc.portal.InsuranceData"/>
