@@ -265,11 +265,7 @@ public class ContentUtils {
         try {
             userContext = new IdcContext("weblogic");
             logger.info("ContentUtils UserContext:" + userContext.getUser());
-        } catch (IllegalArgumentException iae) {
-            iae.printStackTrace();
-        } catch (IdcClientException ice) {
-            ice.printStackTrace();
-        } catch (NamingException ne) {
+        } catch (Exception ne) {
             ne.printStackTrace();
         }
         if (collectionPath != null) {

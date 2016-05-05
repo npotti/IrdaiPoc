@@ -14,18 +14,18 @@
               <af:spacer width="10" height="10" id="s1"/>
               <af:panelGroupLayout id="pgl2" layout="horizontal">
                 <af:selectOneChoice label="Date" id="soc1" autoSubmit="true"
-                                    valueChangeListener="#{pageFlowScope.CircularsBean.contentByDate}">
-                  <af:selectItem label="MAY 04 2016" value="MAY 04 2016"
+                                    valueChangeListener="#{pageFlowScope.CircBean.contentByDate}">
+                  <af:selectItem label="May 04, 2016" value="May 04, 2016"
                                  id="si3"/>
-                  <af:selectItem label="MAY 05 2016" value="MAY 05 2016"
+                  <af:selectItem label="May 05, 2016" value="May 05, 2016"
                                  id="si2"/>
-                  <af:selectItem label="MAY 06 2016" value="MAY 06 2016"
+                  <af:selectItem label="May 06, 2016" value="May 06, 2016"
                                  id="si1"/>
                 </af:selectOneChoice>
               </af:panelGroupLayout>
               <af:table var="row" rowBandingInterval="0" id="t1"
-                        value="#{pageFlowScope.CircularsBean.itemsUi}"
-                        styleClass="AFStretchWidth">
+                        value="#{pageFlowScope.CircBean.itemsUi}"
+                        styleClass="AFStretchWidth" partialTriggers="::soc1">
                 <af:column sortable="false" headerText="Title" id="c2">
                   <af:outputText value="#{row.docTitle}" id="ot3"/>
                 </af:column>
