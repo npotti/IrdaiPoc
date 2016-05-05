@@ -17,9 +17,8 @@
         <!-- (1) banner, overall layout -->
         <af:panelGroupLayout id="pt_pgl8" layout="horizontal">
           <af:panelGroupLayout id="pt_pgl5"
-                               inlineStyle='background-image:url("../../../../images/logobg1.jpg"); height:170px; width:182px; background-repeat:No-Repeat;'
                                layout="vertical" halign="center">
-            <af:image source="/images/irda new logo.png" id="pt_i1"
+            <af:image source="/images/irda new logo bg.png" id="pt_i1"
                       inlineStyle="margin-top: 20px;"/>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pt_pgl6">
