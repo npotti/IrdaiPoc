@@ -844,3 +844,100 @@ border-bottom: 1px solid #ABB8CE;
 }
 
 
+/* PORTLET HEADER SKINNING */
+.detail-header af|showDetailHeader::title-start1 {
+   padding: 0px !important;
+font-size: 0px;
+width: 6px;
+min-width: 6px;
+/*border-left: solid 1px black;
+border-top: solid 1px black;
+ border-radius: 3px; */
+background-repeat: repeat-x;
+background-position: top left;
+border-top-left-radius: 10px;
+border-bottom: none;
+/*background-image: url(/faces/images/portlet_header_background.png);*/
+background: linear-gradient(to bottom, #1e5799 0%, #015579 0%, #0085ba 53%, #009fdb 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.detail-header af|showDetailHeader::title-end1{
+   padding: 0px !important;
+font-size: 0px;
+width: 6px;
+min-width: 6px;
+/* border-right: solid 1px black;
+border-top: solid 1px black;
+ border-radius: 3px; */
+background-repeat: repeat-x;
+background-position: top left;
+border-top-right-radius: 10px;
+border-bottom: none;
+/*background-image: url(/faces/images/portlet_header_background.png);*/
+background: linear-gradient(to bottom, #1e5799 0%, #015579 0%, #0085ba 53%, #009fdb 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+
+.detail-header af|showDetailHeader::title1 {
+padding: 0px !important;
+    color: white  !important;
+   height: 33px !important;
+  background-repeat: repeat-x;
+ /* border-top: solid 1px black; */
+   /*background-image: url(/faces/images/portlet_header_background.png) !important;*/
+background: linear-gradient(to bottom, #1e5799 0%, #015579 0%, #0085ba 53%, #009fdb 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.detail-header af|showDetailHeader::title-text1 {
+color: white  !important;
+}
+
+.detail-header af|showDetailHeader::title-table {
+   color: white  !important;
+ /*  border-left: solid 1px black;
+    border-top: solid 1px black;
+     border-right: solid 1px black; */
+   border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+    background-image: none !important; 
+}
+
+.detail-header af|showDetailHeader::title-text-cell{
+color: white  !important;
+   padding-top: 3px;
+      background-image: none !important;
+}
+
+.detail-header af|showDetailHeader::title-text-cell > h1 {
+    color :white !important;
+    font: bold 18px arial, sans-serif !important;
+    padding:0px !important;
+    line-height:28px !important;
+}
+
+
+.detail-header af|showDetailHeader::content1{
+    padding:0px !important;
+}
+
+.detail-header af|showDetailHeader::disclosed-icon-style{
+    color:white !important;
+}
+
+.detail-header af|showDetailHeader::undisclosed-icon-style{
+    color:white !important;
+}
+
+.detail-header af|showDetailHeader::disclosure-link{
+    color:white !important;
+}
+
+af|showDetailHeader::disclosure-icon-container{
+    color:white !important;
+}
+
+.p_OraHideShowDisclosedSymbol{
+    color: white !important;
+    text-decoration: none;
+}
+

@@ -15,8 +15,14 @@
             <af:panelGroupLayout id="pgl1" layout="vertical"
                                  inlineStyle="padding-left:100px;">
               <af:spacer width="10" height="10" id="s3"/>
-              <af:panelBox text="Claims Chart" id="pb1">
+              <af:showDetailHeader text="Claims Chart" disclosed="true"
+                                   id="sdh1" size="1"
+                                   styleClass="detail-header">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
                 <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
                 <dvt:barGraph id="barGraph1"
                               value="#{bindings.reimbursements.graphModel}"
                               subType="BAR_VERT_CLUST">
@@ -31,9 +37,15 @@
                   <dvt:y1Axis/>
                   <dvt:legendArea automaticPlacement="AP_NEVER"/>
                 </dvt:barGraph>
-              </af:panelBox>
-              <af:panelBox text="Year 2016 Insurance Margin" id="pb2">
+              </af:showDetailHeader>
+              <af:showDetailHeader text="Year 2016 Insurance Margin" disclosed="true"
+                                   id="sdh2" size="1"
+                                   styleClass="detail-header">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
                 <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
                 <dvt:pieGraph id="pieGraph1"
                               value="#{bindings.insureData.graphModel}"
                               subType="PIE">
@@ -48,7 +60,7 @@
                   <dvt:pieLabel rendered="true"/>
                   <dvt:legendArea automaticPlacement="AP_NEVER"/>
                 </dvt:pieGraph>
-              </af:panelBox>
+              </af:showDetailHeader>
               <af:region value="#{bindings.analyticsconsole1.regionModel}"
                          id="r1"/>
               <f:facet name="separator">
