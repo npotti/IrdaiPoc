@@ -12,38 +12,57 @@
           <f:facet name="content">
             <af:panelGroupLayout id="pgl1" layout="vertical">
               <af:spacer width="10" height="10" id="s1"/>
-              <af:panelGroupLayout id="pgl2" layout="horizontal">
-                <af:selectOneChoice label="Date" id="soc1" autoSubmit="true"
-                                    valueChangeListener="#{pageFlowScope.CircBean.contentByDate}">
-                  <af:selectItem label="May 04, 2016" value="May 04, 2016"
-                                 id="si3"/>
-                  <af:selectItem label="May 05, 2016" value="May 05, 2016"
-                                 id="si2"/>
-                  <af:selectItem label="May 06, 2016" value="May 06, 2016"
-                                 id="si1"/>
-                </af:selectOneChoice>
-              </af:panelGroupLayout>
-              <af:table var="row" rowBandingInterval="0" id="t1"
-                        value="#{pageFlowScope.CircBean.itemsUi}"
-                        styleClass="AFStretchWidth" partialTriggers="::soc1">
-                <af:column sortable="false" headerText="Title" id="c2">
-                  <af:outputText value="#{row.docTitle}" id="ot3"/>
-                </af:column>
-                <af:column sortable="false" headerText="Content ID" id="c5">
-                  <af:outputText value="#{row.docInternalName}" id="ot2"/>
-                </af:column>
-                <af:column sortable="false" headerText="Author" id="c3">
-                  <af:outputText value="#{row.author}" id="ot5"/>
-                </af:column>
-                <af:column sortable="false" headerText="col4" id="c4"
-                           rendered="false">
-                  <af:outputText value="#{row.col4}" id="ot4"/>
-                </af:column>
-                <af:column sortable="false" headerText="col5" id="c1"
-                           rendered="false">
-                  <af:outputText value="#{row.col5}" id="ot1"/>
-                </af:column>
-              </af:table>
+              <af:panelHeader text="Filter by Date" id="ph1" size="1"
+                              styleClass="portlet-header">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                  <af:selectOneChoice label="Date" id="soc1" autoSubmit="true"
+                                      valueChangeListener="#{pageFlowScope.CircBean.contentByDate}">
+                    <af:selectItem label="May 04, 2016" value="May 04, 2016"
+                                   id="si3"/>
+                    <af:selectItem label="May 05, 2016" value="May 05, 2016"
+                                   id="si2"/>
+                    <af:selectItem label="May 06, 2016" value="May 06, 2016"
+                                   id="si1"/>
+                    <af:selectItem label="May 07, 2016" value="May 07, 2016"
+                                   id="si4"/>
+                  </af:selectOneChoice>
+                </af:panelGroupLayout>
+              </af:panelHeader>
+              <af:spacer width="10" height="10" id="s2"/>
+              <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="statusbar"/>
+                <af:table var="row" rowBandingInterval="0" id="t1"
+                          value="#{pageFlowScope.CircBean.itemsUi}"
+                          styleClass="AFStretchWidth report-table" partialTriggers="::soc1">
+                  <af:column sortable="false" headerText="Title" id="c2"
+                             width="150">
+                    <af:outputText value="#{row.docTitle}" id="ot3"/>
+                  </af:column>
+                  <af:column sortable="false" headerText="Content ID" id="c5"
+                             width="150">
+                    <af:outputText value="#{row.docInternalName}" id="ot2"/>
+                  </af:column>
+                  <af:column sortable="false" headerText="Author" id="c3">
+                    <af:outputText value="#{row.author}" id="ot5"/>
+                  </af:column>
+                  <af:column sortable="false" headerText="Open" id="c4">
+                    <af:goLink text="Open" id="gl1"
+                               destination="#{row.webURL}"
+                               targetFrame="_blank"/>
+                  </af:column>
+                  <af:column sortable="false" headerText="col5" id="c1"
+                             rendered="false">
+                    <af:outputText value="#{row.col5}" id="ot1"/>
+                  </af:column>
+                </af:table>
+              </af:panelCollection>
             </af:panelGroupLayout>
           </f:facet>
         </af:pageTemplate>
