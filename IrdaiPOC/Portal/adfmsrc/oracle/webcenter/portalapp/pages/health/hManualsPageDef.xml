@@ -15,7 +15,7 @@
         <parameter id="treeNavCollapsed" value="true"/>
         <parameter id="connectionName" value="${'UCM'}"/>
         <parameter id="startFolderPath"
-                   value="${'/Contribution Folders/health/Drafts/'}"/>
+                   value="${'/Contribution Folders/health/Manuals/'}"/>
         <parameter id="resourceId" value="${''}"/>
         <parameter id="readOnly"
                    value="#{!securityContext.userInRole['HealthAdmin']}"/>

@@ -48,28 +48,46 @@
           </attributes>
           <contents>
             <url visible="#{true}"
-                 factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+                 factoryClass="oracle.webcenter.portalframework.sitestructure.rc.TaskFlowResourceFactory"
                  id="hreports"
-                 url="page://oracle/webcenter/portalapp/pages/health/hReports.jspx">
+                 url="taskflow://oracle/webcenter/doclib/view/jsf/taskflows/mainView.xml#doclib-document-library">
               <attributes>
                 <attribute isKey="false" value="Reports" attributeId="Title"/>
               </attributes>
+               <parameters>
+            <parameter id="connectionName">${'UCM'}</parameter>
+             <parameter id="startFolderPath">${'/Contribution Folders/health/vreports'}</parameter>
+            <parameter id="layout">${'explorer'}</parameter>
+             <parameter id="readOnly">${!securityContext.userInRole['HealthAdmin']}</parameter>
+          </parameters>
             </url>
             <url visible="#{true}"
-                 factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+                 factoryClass="oracle.webcenter.portalframework.sitestructure.rc.TaskFlowResourceFactory"
                  id="hDraft"
-                 url="page://oracle/webcenter/portalapp/pages/health/hDrafts.jspx">
+                 url="taskflow://oracle/webcenter/doclib/view/jsf/taskflows/mainView.xml#doclib-document-library">
               <attributes>
                 <attribute isKey="false" value="Draft MOM" attributeId="Title"/>
               </attributes>
+                    <parameters>
+            <parameter id="connectionName">${'UCM'}</parameter>
+             <parameter id="startFolderPath">${'/Contribution Folders/health/DraftMom'}</parameter>
+            <parameter id="layout">${'explorer'}</parameter>
+             <parameter id="readOnly">${!securityContext.userInRole['HealthAdmin']}</parameter>
+          </parameters>
             </url>
             <url visible="#{true}"
-                 factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+                 factoryClass="oracle.webcenter.portalframework.sitestructure.rc.TaskFlowResourceFactory"
                  id="hAMins"
-                 url="page://oracle/webcenter/portalapp/pages/health/Minutes.jspx">
+                 url="taskflow://oracle/webcenter/doclib/view/jsf/taskflows/mainView.xml#doclib-document-library">
               <attributes>
                 <attribute isKey="false" value="Approved Minutes" attributeId="Title"/>
               </attributes>
+              <parameters>
+            <parameter id="connectionName">${'UCM'}</parameter>
+             <parameter id="startFolderPath">${'/Contribution Folders/health/AMin'}</parameter>
+            <parameter id="layout">${'explorer'}</parameter>
+             <parameter id="readOnly">${!securityContext.userInRole['HealthAdmin']}</parameter>
+          </parameters>
             </url>
           </contents>
         </folder>
@@ -96,46 +114,82 @@
           </attributes>
         </url>
         <url id="vCVC" visible="#{true}"
-             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
-             url="page://oracle/webcenter/portalapp/pages/vigilance/vCVC.jspx">
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.TaskFlowResourceFactory"
+             url="taskflow://oracle/webcenter/doclib/view/jsf/taskflows/mainView.xml#doclib-document-library">
           <attributes>
             <attribute value="CVC Act/Manuals" isKey="false" attributeId="Title"/>
           </attributes>
+                  <parameters>
+            <parameter id="connectionName">${'UCM'}</parameter>
+             <parameter id="startFolderPath">${'/Contribution Folders/Vigilance/CVC'}</parameter>
+            <parameter id="layout">${'explorer'}</parameter>
+             <parameter id="readOnly">${!securityContext.userInRole['VigilanceAdmin']}</parameter>
+          </parameters>
         </url>
         <url id="vTenders" visible="#{true}"
-             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
-             url="page://oracle/webcenter/portalapp/pages/vigilance/vTenders.jspx">
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.TaskFlowResourceFactory"
+             url="taskflow://oracle/webcenter/doclib/view/jsf/taskflows/mainView.xml#doclib-document-library">
           <attributes>
             <attribute value="Guidelines on Tenders" isKey="false" attributeId="Title"/>
           </attributes>
+     <parameters>
+            <parameter id="connectionName">${'UCM'}</parameter>
+             <parameter id="startFolderPath">${'/Contribution Folders/Vigilance/Tenders'}</parameter>
+            <parameter id="layout">${'explorer'}</parameter>
+             <parameter id="readOnly">${!securityContext.userInRole['VigilanceAdmin']}</parameter>
+          </parameters>
         </url>
         <url id="vSelection" visible="#{true}"
-             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
-             url="page://oracle/webcenter/portalapp/pages/vigilance/vSelection.jspx">
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.TaskFlowResourceFactory"
+             url="taskflow://oracle/webcenter/doclib/view/jsf/taskflows/mainView.xml#doclib-document-library">
           <attributes>
             <attribute value="Guidelines on Selection" isKey="false" attributeId="Title"/>
           </attributes>
+          <parameters>
+            <parameter id="connectionName">${'UCM'}</parameter>
+             <parameter id="startFolderPath">${'/Contribution Folders/Vigilance/Selection'}</parameter>
+            <parameter id="layout">${'explorer'}</parameter>
+             <parameter id="readOnly">${!securityContext.userInRole['VigilanceAdmin']}</parameter>
+          </parameters>
         </url>
         <url id="vExamination" visible="#{true}"
-             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
-             url="page://oracle/webcenter/portalapp/pages/vigilance/vExamination.jspx">
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.TaskFlowResourceFactory"
+             url="taskflow://oracle/webcenter/doclib/view/jsf/taskflows/mainView.xml#doclib-document-library">
           <attributes>
             <attribute value="Guidelines on Intensive Examination" isKey="false" attributeId="Title"/>
           </attributes>
+          <parameters>
+            <parameter id="connectionName">${'UCM'}</parameter>
+             <parameter id="startFolderPath">${'/Contribution Folders/Vigilance/Examination'}</parameter>
+            <parameter id="layout">${'explorer'}</parameter>
+             <parameter id="readOnly">${!securityContext.userInRole['VigilanceAdmin']}</parameter>
+          </parameters>
         </url>
         <url id="vlinks" visible="#{true}"
-             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
-             url="page://oracle/webcenter/portalapp/pages/vigilance/vlinks.jspx">
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.TaskFlowResourceFactory"
+             url="taskflow://oracle/webcenter/doclib/view/jsf/taskflows/mainView.xml#doclib-document-library">
           <attributes>
             <attribute value="Useful links" isKey="false" attributeId="Title"/>
           </attributes>
+          <parameters>
+            <parameter id="connectionName">${'UCM'}</parameter>
+             <parameter id="startFolderPath">${'/Contribution Folders/Vigilance/links'}</parameter>
+            <parameter id="layout">${'explorer'}</parameter>
+             <parameter id="readOnly">${!securityContext.userInRole['VigilanceAdmin']}</parameter>
+          </parameters>
         </url>
         <url id="vMessages" visible="#{true}"
-             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
-             url="page://oracle/webcenter/portalapp/pages/vigilance/vMessages.jspx">
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.TaskFlowResourceFactory"
+             url="taskflow://oracle/webcenter/doclib/view/jsf/taskflows/mainView.xml#doclib-document-library">
           <attributes>
             <attribute value="Messages on the eve of Vigilance week" isKey="false" attributeId="Title"/>
           </attributes>
+          <parameters>
+            <parameter id="connectionName">${'UCM'}</parameter>
+             <parameter id="startFolderPath">${'/Contribution Folders/Vigilance/Messages'}</parameter>
+            <parameter id="layout">${'explorer'}</parameter>
+             <parameter id="readOnly">${!securityContext.userInRole['VigilanceAdmin']}</parameter>
+          </parameters>
         </url>
       </contents>
     </folder>
