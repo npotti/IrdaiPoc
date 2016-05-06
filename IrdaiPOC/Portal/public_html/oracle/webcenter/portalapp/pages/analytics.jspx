@@ -12,8 +12,7 @@
         <af:pageTemplate viewId="/oracle/webcenter/portalapp/pagetemplates/pageTemplate_globe.jspx"
                          value="#{bindings.pageTemplateBinding}" id="pt1">
           <f:facet name="content">
-            <af:panelGroupLayout id="pgl1" layout="vertical"
-                                 inlineStyle="padding-left:100px;">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
               <af:spacer width="10" height="10" id="s3"/>
               <af:showDetailHeader text="Claims Chart" disclosed="true"
                                    id="sdh1" size="1"
@@ -60,6 +59,79 @@
                   <dvt:pieLabel rendered="true"/>
                   <dvt:legendArea automaticPlacement="AP_NEVER"/>
                 </dvt:pieGraph>
+              </af:showDetailHeader>
+              <af:showDetailHeader text="Tabular Report for Claims"
+                                   disclosed="true" id="sdh3"
+                                   styleClass="detail-header" size="1">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar">
+                    <af:toolbar id="t2">
+                      <af:commandButton text="Download as Excel" id="cb1">
+                        <af:exportCollectionActionListener type="excelHTML"
+                                                           exportedId="t1"
+                                                           title="Claim Report"
+                                                           filename="ClaimReport.xls"/>
+                      </af:commandButton>
+                    </af:toolbar>
+                  </f:facet>
+                  <f:facet name="statusbar"/>
+                  <af:table value="#{bindings.reimbursements1.collectionModel}"
+                            var="row"
+                            rows="#{bindings.reimbursements1.rangeSize}"
+                            emptyText="#{bindings.reimbursements1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.reimbursements1.rangeSize}"
+                            rowBandingInterval="0"
+                            filterModel="#{bindings.reimbursements1Query.queryDescriptor}"
+                            queryListener="#{bindings.reimbursements1Query.processQuery}"
+                            filterVisible="true" varStatus="vs"
+                            selectedRowKeys="#{bindings.reimbursements1.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.reimbursements1.collectionModel.makeCurrent}"
+                            rowSelection="single" id="t1"
+                            styleClass="AFStretchWidth report-table">
+                    <af:column sortProperty="#{bindings.reimbursements1.hints.claimDate.name}"
+                               filterable="true" sortable="true"
+                               headerText="Claim Date"
+                               id="c1">
+                      <f:facet name="filter">
+                        <af:inputDate value="#{vs.filterCriteria.claimDate}"
+                                      id="id1"/>
+                      </f:facet>
+                      <af:outputText value="#{row.claimDate}" id="ot4">
+                        <af:convertDateTime pattern="#{bindings.reimbursements1.hints.claimDate.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.reimbursements1.hints.claimAmount.name}"
+                               filterable="true" sortable="true"
+                               headerText="Claim Amount"
+                               id="c3">
+                      <af:outputText value="#{row.claimAmount}" id="ot1">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.reimbursements1.hints.claimAmount.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.reimbursements1.hints.approvalAmount.name}"
+                               filterable="true" sortable="true"
+                               headerText="Approval Amount"
+                               id="c2">
+                      <af:outputText value="#{row.approvalAmount}" id="ot2">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.reimbursements1.hints.approvalAmount.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.reimbursements1.hints.year.name}"
+                               filterable="true" sortable="true"
+                               headerText="Year"
+                               id="c4">
+                      <af:outputText value="#{row.year}" id="ot3"/>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
               </af:showDetailHeader>
               <af:region value="#{bindings.analyticsconsole1.regionModel}"
                          id="r1"/>

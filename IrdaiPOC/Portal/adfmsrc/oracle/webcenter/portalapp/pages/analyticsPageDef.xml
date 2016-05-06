@@ -29,6 +29,9 @@
         <parameter id="maxDataPointsPerSeries" value="25"/>
       </parameters>
     </taskFlow>
+    <searchRegion Binds="reimbursementsIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="reimbursements1Query"/>
   </executables>
   <bindings>
     <graph IterBinding="reimbursementsIterator" id="reimbursements"
@@ -58,5 +61,16 @@
         </groups>
       </graphDataMap>
     </graph>
+    <tree IterBinding="reimbursementsIterator" id="reimbursements1">
+      <nodeDefinition DefName="com.irdai.wc.portal.beans.analytics.ReimbursementPOJO"
+                      Name="reimbursements10">
+        <AttrNames>
+          <Item Value="claimDate"/>
+          <Item Value="claimAmount"/>
+          <Item Value="approvalAmount"/>
+          <Item Value="year"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

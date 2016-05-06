@@ -734,7 +734,7 @@ background-repeat: repeat-x;
 background-position: top left;
 border-top-left-radius: 10px;
 border-bottom: none;
-background-image: url(/faces/images/portlet_header_background.png);
+background: linear-gradient(to bottom, #1e5799 0%, #015579 0%, #0085ba 53%, #009fdb 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 
 .portlet-header af|panelHeader::title-end1{
@@ -749,25 +749,25 @@ background-repeat: repeat-x;
 background-position: top left;
 border-top-right-radius: 10px;
 border-bottom: none;
-background-image: url(/faces/images/portlet_header_background.png);
+background: linear-gradient(to bottom, #1e5799 0%, #015579 0%, #0085ba 53%, #009fdb 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 
 
 .portlet-header af|panelHeader::title1 {
 padding: 0px !important;
-    color: black  !important;
+    color: white  !important;
    height: 33px !important;
   background-repeat: repeat-x;
  /* border-top: solid 1px black; */
-   background-image: url(/faces/images/portlet_header_background.png) !important;
+   background: linear-gradient(to bottom, #1e5799 0%, #015579 0%, #0085ba 53%, #009fdb 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
 
 .portlet-header af|panelHeader::title-text1 {
-color: black  !important;
+color: white  !important;
 }
 
 .portlet-header af|panelHeader::title-table {
-   color: black  !important;
+   color: white  !important;
  /*  border-left: solid 1px black;
     border-top: solid 1px black;
      border-right: solid 1px black; */
@@ -777,13 +777,13 @@ border-top-right-radius: 10px;
 }
 
 .portlet-header af|panelHeader::title-text-cell{
-color: black  !important;
+color: white  !important;
    padding-top: 3px;
       background-image: none !important;
 }
 
 .portlet-header af|panelHeader::title-text-cell > h1 {
-    color :black !important;
+    color :white !important;
     font: bold 18px arial, sans-serif !important;
     padding:0px !important;
     line-height:28px !important;
